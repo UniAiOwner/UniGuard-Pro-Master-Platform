@@ -2,208 +2,309 @@ package com.uniai.superadmin.ui.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.*
-import androidx.compose.runtime.Composable
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.uniai.superadmin.ui.theme.*
 
-data class TelemetryEvent(
-    val id: String,
-    val tenant: String,
-    val eventType: String,
-    val timestamp: String,
-    val isAlert: Boolean
-)
-
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun SuperAdminDashboardScreen(
-    onNavigateToMint: () -> Unit,
-    onNavigateToFraud: () -> Unit
+    onNavigateToMint: () -> Unit = {},
+    onNavigateToFraud: () -> Unit = {}
 ) {
-    val telemetryList = listOf(
-        TelemetryEvent("EVT-9041", "Airtel Finance", "FRP Lock Enforced", "Just now", false),
-        TelemetryEvent("EVT-9040", "TVS Credit", "SIM Swap Blocked", "2m ago", true),
-        TelemetryEvent("EVT-9039", "Home Credit", "HMAC Key Minted", "5m ago", false),
-        TelemetryEvent("EVT-9038", "Bajaj Finserv", "Monotonic Time Reset Attempt", "12m ago", true),
-        TelemetryEvent("EVT-9037", "Muthoot Micro", "Remote Lock Heartbeat ACK", "18m ago", false)
-    )
+    var isHindiLanguage by remember { mutableStateOf(false) }
 
-    Column(
+    Box(
         modifier = Modifier
             .fillMaxSize()
             .background(ObsidianBackground)
-            .padding(16.dp)
     ) {
-        // Top Header
-        Row(
-            modifier = Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.SpaceBetween,
-            verticalAlignment = Alignment.CenterVertically
+        LazyColumn(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(16.dp),
+            verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
-            Column {
-                Text(
-                    text = "MISSION CONTROL",
-                    color = NeonCyan,
-                    fontSize = 18.sp,
-                    fontWeight = FontWeight.Bold,
-                    letterSpacing = 1.5.sp
-                )
-                Text(
-                    text = "SuperAdmin Platform Command",
-                    color = TextSecondary,
-                    fontSize = 12.sp
-                )
-            }
-            Surface(
-                color = ObsidianSurface,
-                shape = RoundedCornerShape(12.dp),
-                border = androidx.compose.foundation.BorderStroke(1.dp, EmeraldGreen)
-            ) {
+            // 1. Header Bar with Vernacular Switcher & SaaS Title
+            item {
                 Row(
-                    modifier = Modifier.padding(horizontal = 10.dp, vertical = 6.dp),
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceBetween,
                     verticalAlignment = Alignment.CenterVertically
                 ) {
-                    Box(modifier = Modifier.size(6.dp).clip(CircleShape).background(EmeraldGreen))
-                    Spacer(modifier = Modifier.width(6.dp))
-                    Text(text = "LIVE R2DBC", color = EmeraldGreen, fontSize = 11.sp, fontWeight = FontWeight.Bold)
-                }
-            }
-        }
-
-        Spacer(modifier = Modifier.height(16.dp))
-
-        // 2x2 Bento Grid KPI Cards
-        Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
-            Row(horizontalArrangement = Arrangement.spacedBy(12.dp), modifier = Modifier.fillMaxWidth()) {
-                BentoKpiCard(
-                    modifier = Modifier.weight(1f),
-                    title = "LOCKED DEVICES",
-                    value = "124,850",
-                    subtitle = "+1,420 Today",
-                    accentColor = NeonCyan,
-                    icon = "📱"
-                )
-                BentoKpiCard(
-                    modifier = Modifier.weight(1f),
-                    title = "TENANTS ACTIVE",
-                    value = "48",
-                    subtitle = "100% RLS Isolated",
-                    accentColor = RoyalPurple,
-                    icon = "🏢"
-                )
-            }
-            Row(horizontalArrangement = Arrangement.spacedBy(12.dp), modifier = Modifier.fillMaxWidth()) {
-                BentoKpiCard(
-                    modifier = Modifier.weight(1f),
-                    title = "MONTHLY VOLUME",
-                    value = "₹ 1.42 Cr",
-                    subtitle = "+18.4% MoM",
-                    accentColor = EmeraldGreen,
-                    icon = "💰"
-                )
-                BentoKpiCard(
-                    modifier = Modifier.weight(1f),
-                    title = "SYSTEM HEALTH",
-                    value = "99.99%",
-                    subtitle = "0 Fatal Anomalies",
-                    accentColor = AmberWarning,
-                    icon = "⚡"
-                )
-            }
-        }
-
-        Spacer(modifier = Modifier.height(16.dp))
-
-        // Quick Action Command Buttons
-        Row(horizontalArrangement = Arrangement.spacedBy(12.dp), modifier = Modifier.fillMaxWidth()) {
-            Button(
-                onClick = onNavigateToMint,
-                modifier = Modifier.weight(1f).height(48.dp),
-                colors = ButtonDefaults.buttonColors(containerColor = NeonCyan),
-                shape = RoundedCornerShape(12.dp)
-            ) {
-                Text("🔑 Mint Keys", color = ObsidianBackground, fontWeight = FontWeight.Bold)
-            }
-            Button(
-                onClick = onNavigateToFraud,
-                modifier = Modifier.weight(1f).height(48.dp),
-                colors = ButtonDefaults.buttonColors(containerColor = CrimsonRed),
-                shape = RoundedCornerShape(12.dp)
-            ) {
-                Text("🛡️ Fraud Console", color = TextPrimary, fontWeight = FontWeight.Bold)
-            }
-        }
-
-        Spacer(modifier = Modifier.height(20.dp))
-
-        // Real-Time Telemetry Feed Stream
-        Text(
-            text = "LIVE TELEMETRY STREAM",
-            color = TextSecondary,
-            fontSize = 12.sp,
-            fontWeight = FontWeight.Bold,
-            letterSpacing = 1.sp
-        )
-
-        Spacer(modifier = Modifier.height(8.dp))
-
-        LazyColumn(
-            verticalArrangement = Arrangement.spacedBy(8.dp),
-            modifier = Modifier.fillMaxWidth().weight(1f)
-        ) {
-            items(telemetryList) { item ->
-                Surface(
-                    color = ObsidianCard,
-                    shape = RoundedCornerShape(12.dp),
-                    border = androidx.compose.foundation.BorderStroke(
-                        1.dp,
-                        if (item.isAlert) CrimsonRed else ObsidianBorder
-                    ),
-                    modifier = Modifier.fillMaxWidth()
-                ) {
-                    Row(
-                        modifier = Modifier.padding(12.dp),
-                        verticalAlignment = Alignment.CenterVertically,
-                        horizontalArrangement = Arrangement.SpaceBetween
-                    ) {
-                        Column {
-                            Row(verticalAlignment = Alignment.CenterVertically) {
-                                Text(
-                                    text = item.eventType,
-                                    color = if (item.isAlert) CrimsonRed else TextPrimary,
-                                    fontSize = 14.sp,
-                                    fontWeight = FontWeight.SemiBold
-                                )
-                                Spacer(modifier = Modifier.width(8.dp))
-                                Text(
-                                    text = item.id,
-                                    color = TextSecondary,
-                                    fontSize = 11.sp
-                                )
-                            }
+                    Column {
+                        Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(6.dp)) {
+                            Box(
+                                modifier = Modifier
+                                    .size(8.dp)
+                                    .clip(CircleShape)
+                                    .background(EmeraldGreen)
+                            )
                             Text(
-                                text = "Tenant: ${item.tenant}",
-                                color = TextSecondary,
-                                fontSize = 12.sp,
-                                modifier = Modifier.padding(top = 2.dp)
+                                text = "SYSTEM ONLINE • SAAS MASTER",
+                                fontSize = 10.sp,
+                                fontWeight = FontWeight.ExtraBold,
+                                color = EmeraldGreen,
+                                letterSpacing = 1.sp
                             )
                         }
                         Text(
-                            text = item.timestamp,
-                            color = NeonCyan,
-                            fontSize = 11.sp,
-                            fontWeight = FontWeight.Medium
+                            text = if (isHindiLanguage) "यूनीगार्ड ग्लोबल मास्टर" else "UNIGUARD GLOBAL MASTER",
+                            fontSize = 22.sp,
+                            fontWeight = FontWeight.Black,
+                            color = Color.White,
+                            letterSpacing = 0.5.sp
+                        )
+                    }
+
+                    // Vernacular Language Switcher Chip
+                    Surface(
+                        modifier = Modifier.clickable { isHindiLanguage = !isHindiLanguage },
+                        color = ObsidianSurface,
+                        shape = RoundedCornerShape(20.dp),
+                        border = androidx.compose.foundation.BorderStroke(1.dp, NeonCyan.copy(alpha = 0.4f))
+                    ) {
+                        Row(
+                            modifier = Modifier.padding(horizontal = 12.dp, vertical = 6.dp),
+                            verticalAlignment = Alignment.CenterVertically,
+                            horizontalArrangement = Arrangement.spacedBy(6.dp)
+                        ) {
+                            Icon(Icons.Default.Language, contentDescription = null, tint = NeonCyan, modifier = Modifier.size(16.dp))
+                            Text(
+                                text = if (isHindiLanguage) "हिंदी" else "English",
+                                fontSize = 11.sp,
+                                fontWeight = FontWeight.Bold,
+                                color = Color.White
+                            )
+                        }
+                    }
+                }
+            }
+
+            // 2. Global Fleet Hero Banner (As in superadmin_app_ui_sample.jpg)
+            item {
+                Surface(
+                    modifier = Modifier.fillMaxWidth(),
+                    color = ObsidianCard,
+                    shape = RoundedCornerShape(20.dp),
+                    border = androidx.compose.foundation.BorderStroke(1.dp, SolarAmber.copy(alpha = 0.4f))
+                ) {
+                    Box(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .background(
+                                Brush.linearGradient(
+                                    colors = listOf(
+                                        SolarAmber.copy(alpha = 0.12f),
+                                        ObsidianCard,
+                                        NeonCyan.copy(alpha = 0.08f)
+                                    )
+                                )
+                            )
+                            .padding(20.dp)
+                    ) {
+                        Column {
+                            Row(
+                                modifier = Modifier.fillMaxWidth(),
+                                horizontalArrangement = Arrangement.SpaceBetween,
+                                verticalAlignment = Alignment.CenterVertically
+                            ) {
+                                Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                                    Text("🌐", fontSize = 18.sp)
+                                    Text(
+                                        text = "GLOBAL BOUND FLEET TELEMETRY",
+                                        fontSize = 11.sp,
+                                        fontWeight = FontWeight.ExtraBold,
+                                        color = SolarAmber,
+                                        letterSpacing = 1.5.sp
+                                    )
+                                }
+                                Surface(
+                                    color = EmeraldGreen.copy(alpha = 0.15f),
+                                    shape = RoundedCornerShape(12.dp),
+                                    border = androidx.compose.foundation.BorderStroke(1.dp, EmeraldGreen.copy(alpha = 0.5f))
+                                ) {
+                                    Text(
+                                        text = "LIVE SYNC",
+                                        fontSize = 9.sp,
+                                        fontWeight = FontWeight.Bold,
+                                        color = EmeraldGreen,
+                                        modifier = Modifier.padding(horizontal = 8.dp, vertical = 3.dp)
+                                    )
+                                }
+                            }
+
+                            Spacer(modifier = Modifier.height(10.dp))
+
+                            Text(
+                                text = "1,42,850",
+                                fontSize = 42.sp,
+                                fontWeight = FontWeight.Black,
+                                color = Color.White,
+                                letterSpacing = (-1).sp
+                            )
+                            Text(
+                                text = "ACTIVE FINANCED HANDSETS WORLDWIDE (+1,420 TODAY)",
+                                fontSize = 11.sp,
+                                fontWeight = FontWeight.Bold,
+                                color = TextSecondary,
+                                letterSpacing = 0.5.sp
+                            )
+                        }
+                    }
+                }
+            }
+
+            // 3. 3 Top Metric Grid Cards (Minted Licenses, Master Distributors, YTD Revenue)
+            item {
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.spacedBy(10.dp)
+                ) {
+                    DashboardMetricTile(
+                        modifier = Modifier.weight(1f),
+                        icon = Icons.Default.VpnKey,
+                        title = "Minted Keys",
+                        value = "5,00,000",
+                        accentColor = SolarAmber
+                    )
+                    DashboardMetricTile(
+                        modifier = Modifier.weight(1f),
+                        icon = Icons.Default.BusinessCenter,
+                        title = "Distributors",
+                        value = "42 Master",
+                        accentColor = NeonCyan
+                    )
+                    DashboardMetricTile(
+                        modifier = Modifier.weight(1f),
+                        icon = Icons.Default.AccountBalanceWallet,
+                        title = "YTD Revenue",
+                        value = "₹ 3.5 Cr",
+                        accentColor = EmeraldGreen
+                    )
+                }
+            }
+
+            // 4. Primary Action Launcher (Glowing Amber Button: MINT NEW LICENSE BATCH)
+            item {
+                Button(
+                    onClick = onNavigateToMint,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(58.dp),
+                    shape = RoundedCornerShape(16.dp),
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = SolarAmber,
+                        contentColor = ObsidianBackground
+                    ),
+                    elevation = ButtonDefaults.buttonElevation(defaultElevation = 8.dp)
+                ) {
+                    Icon(Icons.Default.Bolt, contentDescription = null, modifier = Modifier.size(24.dp))
+                    Spacer(modifier = Modifier.width(10.dp))
+                    Text(
+                        text = "🔑 MINT NEW LICENSE BATCH (HMAC KERNEL)",
+                        fontSize = 13.sp,
+                        fontWeight = FontWeight.Black,
+                        letterSpacing = 1.sp
+                    )
+                }
+            }
+
+            // 5. Quick Action Grid Title
+            item {
+                Text(
+                    text = "COMMAND MODULES & DIRECTORIES",
+                    fontSize = 11.sp,
+                    fontWeight = FontWeight.ExtraBold,
+                    color = TextSecondary,
+                    letterSpacing = 1.sp
+                )
+            }
+
+            // Quick Action Grid Items
+            item {
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.spacedBy(12.dp)
+                ) {
+                    QuickActionDockTile(
+                        modifier = Modifier.weight(1f),
+                        title = "Master Distributors",
+                        subtitle = "42 Regional Partners",
+                        icon = Icons.Default.Group,
+                        accentColor = NeonCyan,
+                        onClick = { }
+                    )
+                    QuickActionDockTile(
+                        modifier = Modifier.weight(1f),
+                        title = "AI Fraud Threat Engine",
+                        subtitle = "98.4% Risk Shield",
+                        icon = Icons.Default.Shield,
+                        accentColor = CrimsonRed,
+                        onClick = onNavigateToFraud
+                    )
+                }
+            }
+
+            // 6. Live Telemetry Activity Stream
+            item {
+                Surface(
+                    modifier = Modifier.fillMaxWidth(),
+                    color = ObsidianCard,
+                    shape = RoundedCornerShape(16.dp),
+                    border = androidx.compose.foundation.BorderStroke(1.dp, Color.White.copy(alpha = 0.05f))
+                ) {
+                    Column(modifier = Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
+                        Row(
+                            modifier = Modifier.fillMaxWidth(),
+                            horizontalArrangement = Arrangement.SpaceBetween,
+                            verticalAlignment = Alignment.CenterVertically
+                        ) {
+                            Text(
+                                text = "REAL-TIME TELEMETRY STREAM",
+                                fontSize = 11.sp,
+                                fontWeight = FontWeight.ExtraBold,
+                                color = Color.White,
+                                letterSpacing = 1.sp
+                            )
+                            Text("120 events/min", fontSize = 10.sp, color = TextSecondary)
+                        }
+
+                        HorizontalDivider(color = Color.White.copy(alpha = 0.05f))
+
+                        ActivityLogItem(
+                            icon = Icons.Default.VpnKey,
+                            title = "HMAC Batch Minted • 50,000 Keys",
+                            subtitle = "Target: Surya Telecom Master • 2 mins ago",
+                            badgeColor = SolarAmber
+                        )
+                        ActivityLogItem(
+                            icon = Icons.Default.Shield,
+                            title = "FRP Bypass Attempt Blocked",
+                            subtitle = "IMEI 864209041234567 • Jaipur • Just now",
+                            badgeColor = CrimsonRed
+                        )
+                        ActivityLogItem(
+                            icon = Icons.Default.Business,
+                            title = "New Distributor Onboarded",
+                            subtitle = "Vardhman Mobiles (MP Central) • 1 hour ago",
+                            badgeColor = EmeraldGreen
                         )
                     }
                 }
@@ -213,32 +314,89 @@ fun SuperAdminDashboardScreen(
 }
 
 @Composable
-fun BentoKpiCard(
+fun DashboardMetricTile(
     modifier: Modifier = Modifier,
+    icon: ImageVector,
     title: String,
     value: String,
-    subtitle: String,
-    accentColor: Color,
-    icon: String
+    accentColor: Color
 ) {
     Surface(
+        modifier = modifier,
         color = ObsidianCard,
         shape = RoundedCornerShape(16.dp),
-        border = androidx.compose.foundation.BorderStroke(1.dp, ObsidianBorder),
-        modifier = modifier
+        border = androidx.compose.foundation.BorderStroke(1.dp, accentColor.copy(alpha = 0.25f))
     ) {
         Column(modifier = Modifier.padding(14.dp)) {
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceBetween,
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                Text(text = title, color = TextSecondary, fontSize = 10.sp, fontWeight = FontWeight.Bold, letterSpacing = 1.sp)
-                Text(text = icon, fontSize = 16.sp)
-            }
+            Icon(icon, contentDescription = null, tint = accentColor, modifier = Modifier.size(20.dp))
             Spacer(modifier = Modifier.height(8.dp))
-            Text(text = value, color = accentColor, fontSize = 22.sp, fontWeight = FontWeight.Bold)
-            Text(text = subtitle, color = TextSecondary, fontSize = 11.sp, modifier = Modifier.padding(top = 2.dp))
+            Text(value, fontSize = 16.sp, fontWeight = FontWeight.ExtraBold, color = Color.White)
+            Text(title, fontSize = 10.sp, color = TextSecondary, fontWeight = FontWeight.SemiBold)
+        }
+    }
+}
+
+@Composable
+fun QuickActionDockTile(
+    modifier: Modifier = Modifier,
+    title: String,
+    subtitle: String,
+    icon: ImageVector,
+    accentColor: Color,
+    onClick: () -> Unit
+) {
+    Surface(
+        modifier = modifier.clickable { onClick() },
+        color = ObsidianCard,
+        shape = RoundedCornerShape(16.dp),
+        border = androidx.compose.foundation.BorderStroke(1.dp, accentColor.copy(alpha = 0.3f))
+    ) {
+        Row(
+            modifier = Modifier.padding(14.dp),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.spacedBy(10.dp)
+        ) {
+            Box(
+                modifier = Modifier
+                    .size(38.dp)
+                    .clip(RoundedCornerShape(10.dp))
+                    .background(accentColor.copy(alpha = 0.12f)),
+                contentAlignment = Alignment.Center
+            ) {
+                Icon(icon, contentDescription = null, tint = accentColor, modifier = Modifier.size(20.dp))
+            }
+            Column {
+                Text(title, fontSize = 12.sp, fontWeight = FontWeight.Bold, color = Color.White)
+                Text(subtitle, fontSize = 10.sp, color = TextSecondary)
+            }
+        }
+    }
+}
+
+@Composable
+fun ActivityLogItem(
+    icon: ImageVector,
+    title: String,
+    subtitle: String,
+    badgeColor: Color
+) {
+    Row(
+        modifier = Modifier.fillMaxWidth(),
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.spacedBy(12.dp)
+    ) {
+        Box(
+            modifier = Modifier
+                .size(32.dp)
+                .clip(CircleShape)
+                .background(badgeColor.copy(alpha = 0.15f)),
+            contentAlignment = Alignment.Center
+        ) {
+            Icon(icon, contentDescription = null, tint = badgeColor, modifier = Modifier.size(16.dp))
+        }
+        Column(modifier = Modifier.weight(1f)) {
+            Text(title, fontSize = 12.sp, fontWeight = FontWeight.Bold, color = Color.White)
+            Text(subtitle, fontSize = 10.sp, color = TextSecondary)
         }
     }
 }
