@@ -3,12 +3,10 @@ package com.uniai.superadmin
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -17,7 +15,8 @@ import com.uniai.superadmin.ui.theme.*
 
 enum class SuperAdminTab(val title: String, val icon: String) {
     DASHBOARD("Control", "🏠"),
-    TENANTS("Tenants", "🏢"),
+    DISTRIBUTORS("Distro", "🏢"),
+    TENANTS("Tenants", "🌐"),
     MINT("Mint", "🔑"),
     FRAUD("Fraud", "🛡️"),
     AUDIT("Vault", "📜")
@@ -62,7 +61,7 @@ class MainActivity : ComponentActivity() {
                                                 Text(
                                                     text = tab.title,
                                                     color = if (isSelected) NeonCyan else TextSecondary,
-                                                    fontSize = 11.sp,
+                                                    fontSize = 10.sp,
                                                     fontWeight = if (isSelected) FontWeight.Bold else FontWeight.Normal
                                                 )
                                             },
@@ -80,6 +79,7 @@ class MainActivity : ComponentActivity() {
                                         onNavigateToMint = { selectedTab = SuperAdminTab.MINT },
                                         onNavigateToFraud = { selectedTab = SuperAdminTab.FRAUD }
                                     )
+                                    SuperAdminTab.DISTRIBUTORS -> DistributorManagementScreen()
                                     SuperAdminTab.TENANTS -> TenantRegistryScreen()
                                     SuperAdminTab.MINT -> LicenseMintingKernelScreen()
                                     SuperAdminTab.FRAUD -> AiFraudOverrideScreen()
