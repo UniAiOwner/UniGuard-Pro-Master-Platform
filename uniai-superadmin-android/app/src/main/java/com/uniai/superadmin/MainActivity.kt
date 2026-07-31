@@ -16,9 +16,9 @@ import com.uniai.superadmin.ui.theme.*
 enum class SuperAdminTab(val title: String, val icon: String) {
     DASHBOARD("Control", "🏠"),
     DISTRIBUTORS("Distro", "🏢"),
-    TENANTS("Tenants", "🌐"),
-    MINT("Mint", "🔑"),
-    FRAUD("Fraud", "🛡️"),
+    FORGE("Forge", "🔑"),
+    DEVICE_CONTROL("Device", "📱"),
+    CONFIG("Config", "⚙️"),
     AUDIT("Vault", "📜")
 }
 
@@ -54,7 +54,7 @@ class MainActivity : ComponentActivity() {
                                             icon = {
                                                 Text(
                                                     text = tab.icon,
-                                                    fontSize = if (isSelected) 20.sp else 16.sp
+                                                    fontSize = if (isSelected) 18.sp else 15.sp
                                                 )
                                             },
                                             label = {
@@ -76,13 +76,13 @@ class MainActivity : ComponentActivity() {
                             Box(modifier = Modifier.padding(innerPadding)) {
                                 when (selectedTab) {
                                     SuperAdminTab.DASHBOARD -> SuperAdminDashboardScreen(
-                                        onNavigateToMint = { selectedTab = SuperAdminTab.MINT },
-                                        onNavigateToFraud = { selectedTab = SuperAdminTab.FRAUD }
+                                        onNavigateToMint = { selectedTab = SuperAdminTab.FORGE },
+                                        onNavigateToFraud = { selectedTab = SuperAdminTab.AUDIT }
                                     )
                                     SuperAdminTab.DISTRIBUTORS -> DistributorManagementScreen()
-                                    SuperAdminTab.TENANTS -> TenantRegistryScreen()
-                                    SuperAdminTab.MINT -> LicenseMintingKernelScreen()
-                                    SuperAdminTab.FRAUD -> AiFraudOverrideScreen()
+                                    SuperAdminTab.FORGE -> KeyManagerScreen()
+                                    SuperAdminTab.DEVICE_CONTROL -> DeviceControlScreen()
+                                    SuperAdminTab.CONFIG -> SystemConfigScreen()
                                     SuperAdminTab.AUDIT -> AuditVaultScreen()
                                 }
                             }
