@@ -1,0 +1,9 @@
+# UniGuard Pro Git Ignore Rules
+PROJECT PLANNING/
+Planning/
+*.zip
+*.apk
+*.tar.gz
+*.iso
+.DS_Store
+*.log
