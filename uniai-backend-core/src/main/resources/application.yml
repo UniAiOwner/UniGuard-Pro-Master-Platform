@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: uniai-backend-core
+  r2dbc:
+    url: r2dbc:postgresql://localhost:5432/uniguard
+    username: uniguard_user
+    password: uniguard_password
+  datasource:
+    url: jdbc:postgresql://localhost:5432/uniguard
+    username: uniguard_user
+    password: uniguard_password
+    driver-class-name: org.postgresql.Driver
+  liquibase:
+    change-log: classpath:/db/changelog/db.changelog-master.xml
+    enabled: true
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
+server:
+  port: 8080
