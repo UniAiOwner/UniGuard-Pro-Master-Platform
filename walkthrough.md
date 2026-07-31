@@ -1,109 +1,87 @@
-# 🚀 Parallel Agency Swarm Execution Plan — UniGuard Pro v1.0
+# 🏬 Retailer Operations Workspace (`uniai-retailer-android`) — Implementation Plan
 
-> **Artifact Path:** `<Artifact Directory>/parallel_agency_swarm_execution_plan.md`  
-> **Target Standard:** Commercial DPC Standard (T-Cop / M-Cop Market Leader Architecture)  
-> **Execution Strategy:** **Dual Parallel Agency Swarm (2x Development Velocity)**  
-> **User Review Required:** YES — Please review proposed architecture before kickoff.
+> **Artifact Location:** `<Artifact Directory>/retailer_app_code_build_plan.md`  
+> **App Module:** `uniai-retailer-android/`  
+> **Target Standard:** Commercial DPC Standard (T-Cop / M-Cop Market Leader Specification)  
+> **Design Language:** Dual Adaptive Theme (Porcelain White Light Mode ☀️ + Obsidian Dark Mode 🌙)  
+> **PLANNING STATUS:** 🧊 **CODE BUILD PLAN READY FOR EXECUTION**
 
 ---
 
 ## 🎯 1. Goal & Architecture Overview
 
-To build UniGuard Pro with maximum speed, zero shortcuts, and 100% production code quality, we will deploy **2 Specialized Agency Subagents** simultaneously:
+The **Retailer Operations Workspace (`uniai-retailer-android`)** is the primary mobile application used by mobile shop owners and counter staff to onboard new customer phones, manage license key inventory, collect payments, and lock overdue devices.
 
 ```
 ┌────────────────────────────────────────────────────────────────────────┐
-│                   PARALLEL AGENCY SWARM ARCHITECTURE                   │
-├───────────────────────────────────┬────────────────────────────────────┤
-│ 🛠️ SWARM AGENT A: BACKEND CORE    │ 📱 SWARM AGENT B: CUSTOMER DPC APP │
-│ (Spring Boot 3.x + PostgreSQL 16) │ (Native Android DPC + Kiosk Lock)  │
-├───────────────────────────────────┼────────────────────────────────────┤
-│ ◾ Scaffolds `uniai-backend-core`  │ ◾ Scaffolds `uniai-dpc-android`    │
-│ ◾ Writes `docker-compose.yml` DB  │ ◾ Configures `DeviceAdminReceiver` │
-│ ◾ Executes PostgreSQL DDL scripts │ ◾ Implements Lock Screen Kiosk UI  │
-│ ◾ Builds WebFlux API Controllers  │ ◾ Integrates Telemetry Heartbeat   │
-└───────────────────────────────────┴────────────────────────────────────┘
+│                   RETAILER APP 5-TAB NAVIGATION DOCK                   │
+├───────────────┬───────────────┬───────────────┬───────────────┬────────┤
+│ 🏠 Home       │ 👥 Customers  │ ➕ Add Device │ 🔑 Keys Wallet│ ⚙️ Profile│
+└───────────────┴───────────────┴───────────────┴───────────────┴────────┘
 ```
 
 ---
 
-## 🔬 2. Detailed Breakdown of Subagent Roles
-
-### 🛠️ Agent A: Backend Microservices & Database Architect
-- **Module Directory:** `uniai-backend-core/`
-- **Tech Stack:** Spring Boot 3.3 (WebFlux Reactive), Kotlin 1.9, PostgreSQL 16, Redis 7, Liquibase DB migrations.
-- **Key Tasks:**
-  1. Create `docker-compose.yml` for PostgreSQL 16 (`port 5432`) and Redis 7 (`port 6379`).
-  2. Implement Liquibase migration scripts for `tenants`, `distributors`, `retailers`, `license_keys`, `finance_cases`, `timeline_events`, `audit_logs`.
-  3. Create Spring Boot WebFlux API Controllers for:
-     - `POST /api/v1/admin/licenses/mint` (SuperAdmin Key Minting)
-     - `POST /api/v1/retailer/devices/onboard` (Retailer 45s Onboarding)
-     - `POST /api/v1/dpc/telemetry/heartbeat` (Customer DPC Telemetry Ping)
-     - `POST /api/v1/payments/webhook` (Razorpay/Cashfree Auto-Debit Webhook)
-
-### 📱 Agent B: Customer DPC Companion Shield Specialist
-- **Module Directory:** `uniai-dpc-android/`
-- **Tech Stack:** Native Android (Kotlin), Jetpack Compose, Material 3, Android Enterprise DevicePolicyManager API.
-- **Key Tasks:**
-  1. Create `uniai-dpc-android` Gradle project with Android Enterprise provisioning manifest (`<receiver android:name=".dpc.UniGuardAdminReceiver" ...>`).
-  2. Implement `UniGuardDeviceAdminReceiver.kt` handling Device Owner provisioning callbacks, FRP key binding, and Knox hardware attestation.
-  3. Implement **Kiosk Lock Screen UI (`LockedKioskScreen.kt`)** in Jetpack Compose featuring:
-     - Dynamic EMI Overdue Banner (`₹ 1,400.00 Due`).
-     - Live UPI QR Code Generator for instant customer self-payment.
-     - 1-Tap Emergency Call Launcher (`112` emergency & Retailer Call button).
-  4. Implement **72-Hour Offline Hard-Lock Worker (`OfflineLockWorker.kt`)** using hardware boot uptime calculations.
-
----
-
-## 📑 3. Proposed File Tree Structure (To Be Created)
+## 🔬 2. Proposed Component & File Architecture
 
 ```
-UniGuard Pro/
-├── docker-compose.yml                      [NEW - Docker PostgreSQL 16 & Redis 7]
-├── uniai-backend-core/                     [NEW - Spring Boot 3.x WebFlux Backend]
-│   ├── build.gradle.kts
-│   └── src/main/kotlin/com/uniguard/backend/
-│       ├── config/
-│       ├── controller/
-│       ├── domain/
-│       ├── repository/
-│       └── service/
-├── uniai-dpc-android/                      [NEW - Native Android DPC App]
-│   ├── build.gradle.kts
-│   └── src/main/java/com/uniguard/dpc/
-│       ├── dpc/
-│       │   ├── UniGuardAdminReceiver.kt
-│       │   └── OfflineLockWorker.kt
-│       ├── ui/
-│       │   ├── theme/
-│       │   └── screens/
-│       │       └── LockedKioskScreen.kt
-│       └── MainActivity.kt
-└── dev_logs.txt
+uniai-retailer-android/
+├── build.gradle.kts
+└── app/src/main/java/com/uniai/uniguard/retailer/
+    ├── MainActivity.kt                      [NEW - Single Activity Navigation Host]
+    ├── data/
+    │   ├── api/RetailerApiService.kt        [NEW - WebFlux API Retrofit/Ktor Client]
+    │   └── model/RetailerModels.kt          [NEW - DTO Data Classes]
+    ├── ui/
+    │   ├── theme/
+    │   │   ├── Color.kt                     [NEW - Light & Dark Palette Tokens]
+    │   │   └── Theme.kt                     [NEW - ThemeModeSelector Engine]
+    │   ├── components/
+    │   │   ├── BarcodeScannerView.kt        [NEW - CameraX + ML Kit Scanner]
+    │   │   └── TopHeaderBar.kt              [NEW - Nothing OS Clock + Vernacular]
+    │   └── screens/
+    │       ├── StaffAuthGatewayScreen.kt    [NEW - Screen 1: Login & Staff PIN]
+    │       ├── RetailerHomeScreen.kt        [NEW - Screen 2: Dashboard & Bento Grid]
+    │       ├── CustomerDirectoryScreen.kt   [NEW - Screen 3: Search & Directory]
+    │       ├── DeviceOnboardingScreen.kt    [NEW - Screen 4: 45s Barcode Wizard]
+    │       ├── LicenseWalletScreen.kt       [NEW - Screen 6: Sub-3s UPI Key Store]
+    │       └── ShopSettingsScreen.kt        [NEW - Screen 9: Profile & Theme Switcher]
+    └── AndroidManifest.xml                  [NEW - CameraX & Network Permissions]
 ```
 
 ---
 
-## 🧪 4. Verification & Testing Plan
+## 🛠️ 3. Core Component Specifications
 
-1. **Backend Verification:**
-   - Run `docker-compose up -d` to launch PostgreSQL 16 & Redis.
-   - Execute Gradle build `./gradlew :uniai-backend-core:bootRun` and verify database tables created with RLS.
-   - Run API health check `curl http://localhost:8080/actuator/health`.
-2. **Android DPC Verification:**
-   - Execute `./gradlew :uniai-dpc-android:assembleDebug` and verify zero compilation errors.
-   - Verify `UniGuardAdminReceiver` declared in `AndroidManifest.xml`.
+### 1️⃣ Staff Auth Gateway (`StaffAuthGatewayScreen.kt`)
+- Dual auth mode: `[Mobile OTP]` (WhatsApp/SMS fast 6-digit OTP) + `[Staff PIN]`.
+- 1-Tap Biometric Fingerprint / Face Unlock integration.
+
+### 2️⃣ Retailer Home Dashboard (`RetailerHomeScreen.kt`)
+- Dual Theme Engine support (Porcelain White Light Mode `#F8F9FA` for shop counter glare reduction + Obsidian Dark Mode `#0B0E14`).
+- Bento Box Cards: `🔑 42 License Keys Available`, `📱 148 Total Customers`, `🔒 4 Locked Phones`, `⚡ 2 Pending`.
+- Primary Button: `+ ADD CUSTOMER / DEVICE` (Launches sub-45s box barcode scanner).
+
+### 3️⃣ 45-Second Barcode Onboarding Wizard (`DeviceOnboardingScreen.kt`)
+- CameraX + Google ML Kit box barcode scanner overlay.
+- Auto-extracts `IMEI 1`, `IMEI 2`, and `Serial Number` from phone box barcode.
+- Generates customer DPC Enrollment QR Code for instant phone setup.
+
+### 4️⃣ Instant UPI Key Purchase Store (`LicenseWalletScreen.kt`)
+- Prepaid key stock meter.
+- Bulk Tier Packs: `10 Keys (10+1 Free)`, `25 Keys (25+3 Free)`, `50 Keys (50+8 Free)`.
+- Sub-3 second UPI intent payment launcher & automated webhook key credit.
 
 ---
 
-## ❓ Open Questions for User Approval
+## 🧪 4. Verification Plan
 
-> [!IMPORTANT]
-> **User Review Required:**
-> 1. Do you approve launching the **Dual Parallel Agency Swarm** right now to build `uniai-backend-core` and `uniai-dpc-android` simultaneously?
-> 2. Should we start creating the project files as outlined in the file tree above?
+1. **Gradle Build Verification:**
+   Run `./gradlew :uniai-retailer-android:assembleDebug` and verify `BUILD SUCCESSFUL` with 0 compilation errors.
+2. **UI & Theme Verification:**
+   Verify `ThemeModeSelector` toggles cleanly between Light Mode (`#F8F9FA`) and Dark Mode (`#0B0E14`).
 
 ---
 
-*Plan Location:* `<Artifact Directory>/parallel_agency_swarm_execution_plan.md`  
+*Plan Location:* `<Artifact Directory>/retailer_app_code_build_plan.md`  
 *Signed by: Shoeb Ahmad*

@@ -1,0 +1,2 @@
+com.uniai.distributor
+string app_name
