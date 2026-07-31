@@ -1,106 +1,75 @@
-# 🛡️ UniGuard Pro — Production Hardening & Gap Resolution Plan
+# 👑 SuperAdmin Mission Control — Production-Grade Rich UI Implementation Plan
 
-> **Artifact Location:** `<Artifact Directory>/production_hardening_and_gap_resolution_plan.md`  
-> **Audit Status:** 🔍 **360° RESEARCH AUDIT COMPLETED BY AGENCY SUBAGENTS**  
-> **Goal:** Eliminate all identified stubs, math flaws, and security gaps to achieve 100% Commercial Production Standard.
-
----
-
-## 🔬 1. Audit Findings & Gap Resolution Strategy
-
-Our Agency Research Subagents conducted an exhaustive audit of all research volumes and codebase modules. Below are the 5 critical gaps identified and our concrete resolution plan:
+> **Artifact Location:** `<Artifact Directory>/superadmin_rich_ui_implementation_plan.md`  
+> **Target Module:** `uniai-superadmin-android/`  
+> **Design Theme:** Obsidian Dark Mode 🌙 (`#0B0E14`) + Neon Cyan (`#00F5FF`) & Emerald (`#10B981`)  
+> **Goal:** Upgrade SuperAdmin App from 1-line text placeholders to a world-class, commercial production-grade Jetpack Compose interface.
 
 ---
 
-### 🟢 Gap 1: 72-Hour Offline Hard-Lock Monotonic Boot Math (`OfflineLockWorker.kt`)
-
-- 🛑 **The Flaw:** `SystemClock.elapsedRealtime()` resets to 0 on phone reboot. A customer rebooting every 48 hours could bypass the offline lock indefinitely.
-- ⚡ **Production Fix:** Implement cumulative boot uptime persistence math in `EncryptedSharedPreferences`:
-  ```kotlin
-  val lastKnownUptime = encryptedPrefs.getLong("LAST_UPTIME_MS", 0L)
-  val totalAccumulatedOffline = encryptedPrefs.getLong("TOTAL_OFFLINE_MS", 0L)
-  val delta = currentElapsedRealtime - lastKnownUptime
-  val newTotalOffline = totalAccumulatedOffline + delta
-  encryptedPrefs.edit().putLong("TOTAL_OFFLINE_MS", newTotalOffline).apply()
-  if (newTotalOffline >= 72 * 3600 * 1000L) {
-      enforceHardLock()
-  }
-  ```
-
----
-
-### 🟢 Gap 2: DPC Hardware Lock Task & FRP Protection (`uniai-dpc-android`)
-
-- 🛑 **The Flaw:** `DevicePolicyManager` APIs were not fully invoked to lock system bars and disallow factory resets.
-- ⚡ **Production Fix:** Implement concrete DPM policy enforcement in `UniGuardAdminReceiver.kt`:
-  ```kotlin
-  dpm.setLockTaskPackages(adminComponent, arrayOf(context.packageName))
-  dpm.addUserRestriction(adminComponent, UserManager.DISALLOW_FACTORY_RESET)
-  dpm.addUserRestriction(adminComponent, UserManager.DISALLOW_SAFE_BOOT)
-  dpm.setKeyguardDisabled(adminComponent, true)
-  ```
-
----
-
-### 🟢 Gap 3: Razorpay Webhook HmacSHA256 Signature Verification (`uniai-backend-core`)
-
-- 🛑 **The Flaw:** Webhook endpoint accepted webhooks without signature validation.
-- ⚡ **Production Fix:** Implement HmacSHA256 signature verification in `PaymentWebhookController.kt`:
-  ```kotlin
-  fun verifySignature(payload: String, signature: String, secret: String): Boolean {
-      val hmac = Mac.getInstance("HmacSHA256")
-      hmac.init(SecretKeySpec(secret.toByteArray(), "HmacSHA256"))
-      val calculatedBytes = hmac.doFinal(payload.toByteArray())
-      val calculatedHex = Hex.encodeHexString(calculatedBytes)
-      return calculatedHex.equals(signature, ignoreCase = true)
-  }
-  ```
-
----
-
-### 🟢 Gap 4: PostgreSQL R2DBC Row-Level Security (RLS) Tenant Filter
-
-- 🛑 **The Flaw:** Queries ran without setting `tenant_id` session context in PostgreSQL.
-- ⚡ **Production Fix:** Implement `TenantContextFilter` in Spring Boot WebFlux:
-  - Inject `SET LOCAL app.current_tenant_id = :tenantId` before each Reactive R2DBC transaction execution.
-
----
-
-### 🟢 Gap 5: FCM Real-Time Instant Lock/Unlock Push Dispatcher
-
-- 🛑 **The Flaw:** Lock/unlock commands relied solely on HTTP polling.
-- ⚡ **Production Fix:** Add Firebase Cloud Messaging (FCM) push payload dispatcher in `uniai-backend-core` to trigger immediate remote device lock/unlock.
-
----
-
-## 🛠️ 2. Proposed Code Changes Matrix
+## 🎯 1. Component Architecture & File Matrix
 
 ```
-UniGuard Pro/
-├── uniai-backend-core/
-│   └── src/main/kotlin/com/uniguard/backend/
-│       ├── config/
-│       │   └── R2dbcTenantContextConfig.kt      [NEW - RLS Session Tenant Injector]
-│       ├── controller/
-│       │   └── PaymentWebhookController.kt      [MODIFY - Add HmacSHA256 Signature Validation]
-│       └── service/
-│           └── FcmPushDispatcherService.kt      [NEW - Instant Lock Push Dispatcher]
-└── uniai-dpc-android/
-    └── app/src/main/java/com/uniai/uniguard/dpc/
-        ├── UniGuardDeviceAdminReceiver.kt       [MODIFY - Add DPM Lock Task & FRP Restrictions]
-        └── OfflineLockWorker.kt                 [MODIFY - Add Monotonic Boot Persistence Math]
+uniai-superadmin-android/app/src/main/java/com/uniai/superadmin/
+├── MainActivity.kt                            [MODIFY - 5-Tab Navigation Host & TOTP Auth Gate]
+├── ui/
+│   ├── theme/
+│   │   ├── Color.kt                           [NEW - Obsidian & Neon Cyberpunk Tokens]
+│   │   └── Theme.kt                           [NEW - SuperAdmin Theme System]
+│   └── screens/
+│       ├── SuperAdminAuthGatewayScreen.kt      [REWRITE - TOTP 2FA Keypad & Biometric Gate]
+│       ├── SuperAdminDashboardScreen.kt        [REWRITE - Bento Grid Live Command & Telemetry]
+│       ├── LicenseMintingKernelScreen.kt       [REWRITE - HMAC-SHA256 Batch Minting Kernel]
+│       ├── AiFraudOverrideScreen.kt            [REWRITE - AI Anomaly Score & Master Overrides]
+│       ├── TenantRegistryScreen.kt             [REWRITE - Multi-Tenant Isolation & Limits]
+│       ├── RevenueAnalyticsScreen.kt           [REWRITE - Revenue Intel & Collection Metrics]
+│       └── AuditVaultScreen.kt                 [REWRITE - Immutable Cryptographic Audit Log]
 ```
 
 ---
 
-## 🧪 3. Verification & Testing Plan
+## 🛠️ 2. Screen Specifications
+
+### 🔐 1. SuperAdminAuthGatewayScreen.kt
+- Hardware TOTP 2FA Keypad (6-digit PIN input dots with instant feedback).
+- Biometric Fingerprint / YubiKey Hardware Token status badge (`🟢 YubiKey 5C NFC Verified`).
+
+### 📊 2. SuperAdminDashboardScreen.kt
+- Bento Grid Cards:
+  - `📱 124,850 Active Locked Devices` (`+1,420 Today`)
+  - `🏢 48 Enterprise Tenants` (`100% RLS Isolated`)
+  - `💰 ₹ 1.42 Cr Monthly Volume` (`+18.4% MoM`)
+  - `🟢 99.99% System Health` (`Reactive WebFlux Active`)
+- Telemetry Feed Stream & Quick Action Launchers (`Mint Keys`, `Master Lock`).
+
+### 🔑 3. LicenseMintingKernelScreen.kt
+- Batch Key Minting Controls (Slider: `1,000 Keys`, `5,000 Keys`, `10,000 Keys`).
+- Cryptographic SHA-256 HMAC Secret Key status & rotation.
+- Mint Execution Progress Bar & Success Cryptographic Hash dialog.
+
+### 🛡️ 4. AiFraudOverrideScreen.kt
+- AI Anomaly Threat Feed:
+  - `🚨 FRP Bypass Attempt` (IMEI `8649204810...` — Risk Score `94%`)
+  - `⚠️ SIM Swap Detected` (Phone `+91 98765...` — Risk Score `88%`)
+- Master Override Console: `🔴 GLOBAL EMERGENCY LOCK` & `🟢 MASTER UNLOCK OVERRIDE` buttons.
+
+### 🏢 5. TenantRegistryScreen.kt
+- Searchable enterprise list (`Airtel Finance`, `TVS Credit`, `Home Credit India`).
+- Tenant creation dialog with API Rate Limiting & RLS tenant ID assignments.
+
+### 📜 6. AuditVaultScreen.kt
+- Searchable audit log feed showing event timestamps, admin IDs, event types, and SHA-256 tamper verification hashes.
+
+---
+
+## 🧪 3. Verification Plan
 
 1. **Gradle Build Verification:**
-   Execute `./gradlew assembleDebug` across both modules to ensure 100% clean compilation.
-2. **GitHub Push Verification:**
-   Commit and push production-hardened code to `https://github.com/UniAiOwner/UniGuard-Pro-Master-Platform.git`.
+   Run `./gradlew assembleDebug` in `uniai-superadmin-android/` and verify `BUILD SUCCESSFUL`.
+2. **Physical Device Verification:**
+   Install updated APK onto connected Realme phone (`XGQ8JFZXEITGJ7IB`), launch `com.uniai.superadmin/.MainActivity`, take a screenshot, and verify the rich UI renders on the phone!
 
 ---
 
-*Plan Location:* `<Artifact Directory>/production_hardening_and_gap_resolution_plan.md`  
+*Plan Location:* `<Artifact Directory>/superadmin_rich_ui_implementation_plan.md`  
 *Signed by: Shoeb Ahmad*
