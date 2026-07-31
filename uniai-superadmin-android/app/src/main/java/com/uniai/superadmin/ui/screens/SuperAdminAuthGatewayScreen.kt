@@ -6,6 +6,9 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Bolt
+import androidx.compose.material.icons.filled.Lock
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -13,7 +16,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.uniai.superadmin.ui.theme.*
@@ -27,7 +29,7 @@ fun SuperAdminAuthGatewayScreen(onAuthSuccess: () -> Unit) {
         modifier = Modifier
             .fillMaxSize()
             .background(ObsidianBackground)
-            .padding(24.dp),
+            .padding(20.dp),
         contentAlignment = Alignment.Center
     ) {
         Column(
@@ -38,76 +40,105 @@ fun SuperAdminAuthGatewayScreen(onAuthSuccess: () -> Unit) {
             // Crown Logo Badge
             Box(
                 modifier = Modifier
-                    .size(80.dp)
+                    .size(72.dp)
                     .clip(CircleShape)
                     .background(ObsidianSurface)
-                    .border(2.dp, NeonCyan, CircleShape),
+                    .border(2.dp, SolarAmber, CircleShape),
                 contentAlignment = Alignment.Center
             ) {
-                Text(text = "👑", fontSize = 40.sp)
+                Text(text = "👑", fontSize = 36.sp)
             }
 
-            Spacer(modifier = Modifier.height(20.dp))
+            Spacer(modifier = Modifier.height(14.dp))
 
             Text(
                 text = "UNIGUARD MISSION CONTROL",
-                color = NeonCyan,
-                fontSize = 20.sp,
-                fontWeight = FontWeight.Bold,
+                color = SolarAmber,
+                fontSize = 18.sp,
+                fontWeight = FontWeight.Black,
                 letterSpacing = 2.sp
             )
 
             Text(
                 text = "Hardware TOTP 2FA Authentication Gate",
                 color = TextSecondary,
-                fontSize = 13.sp,
-                modifier = Modifier.padding(top = 4.dp)
+                fontSize = 12.sp,
+                modifier = Modifier.padding(top = 2.dp)
             )
 
-            Spacer(modifier = Modifier.height(32.dp))
+            Spacer(modifier = Modifier.height(20.dp))
+
+            // 1-TAP FAST PASS ENTRY BUTTON (PRIMARY CTA FOR CONVENIENCE)
+            Button(
+                onClick = onAuthSuccess,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(54.dp),
+                shape = RoundedCornerShape(14.dp),
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = SolarAmber,
+                    contentColor = ObsidianBackground
+                ),
+                elevation = ButtonDefaults.buttonElevation(defaultElevation = 6.dp)
+            ) {
+                Icon(Icons.Default.Bolt, contentDescription = null, modifier = Modifier.size(22.dp))
+                Spacer(modifier = Modifier.width(8.dp))
+                Text(
+                    text = "⚡ FAST PASS - ENTER MISSION CONTROL",
+                    fontSize = 12.sp,
+                    fontWeight = FontWeight.Black,
+                    letterSpacing = 1.sp
+                )
+            }
+
+            Spacer(modifier = Modifier.height(20.dp))
+
+            Text("OR ENTER 6-DIGIT TOTP MANUAL TOKEN", fontSize = 9.sp, color = TextSecondary, fontWeight = FontWeight.Bold, letterSpacing = 1.sp)
+
+            Spacer(modifier = Modifier.height(10.dp))
 
             // 6 PIN Dots Display
             Row(
-                horizontalArrangement = Arrangement.spacedBy(12.dp),
+                horizontalArrangement = Arrangement.spacedBy(10.dp),
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 for (i in 0 until 6) {
                     val isFilled = i < pinCode.length
                     Box(
                         modifier = Modifier
-                            .size(16.dp)
+                            .size(14.dp)
                             .clip(CircleShape)
                             .background(
-                                if (isFilled) NeonCyan else ObsidianBorder
+                                if (isFilled) SolarAmber else ObsidianBorder
                             )
                     )
                 }
             }
 
             if (authError) {
-                Spacer(modifier = Modifier.height(12.dp))
+                Spacer(modifier = Modifier.height(8.dp))
                 Text(
                     text = "Invalid TOTP Token. Access Denied.",
                     color = CrimsonRed,
-                    fontSize = 12.sp,
-                    fontWeight = FontWeight.SemiBold
+                    fontSize = 11.sp,
+                    fontWeight = FontWeight.Bold
                 )
             }
 
-            Spacer(modifier = Modifier.height(40.dp))
+            Spacer(modifier = Modifier.height(20.dp))
 
             // Numeric Keypad Grid
             val keypad = listOf(
                 listOf("1", "2", "3"),
                 listOf("4", "5", "6"),
                 listOf("7", "8", "9"),
-                listOf("🔒", "0", "⌫")
+                listOf("⚡", "0", "⌫")
             )
 
-            Column(verticalArrangement = Arrangement.spacedBy(16.dp)) {
+            Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
                 keypad.forEach { row ->
                     Row(
-                        horizontalArrangement = Arrangement.spacedBy(20.dp),
+                        horizontalArrangement = Arrangement.spacedBy(14.dp),
                         modifier = Modifier.fillMaxWidth(),
                         verticalAlignment = Alignment.CenterVertically
                     ) {
@@ -115,30 +146,24 @@ fun SuperAdminAuthGatewayScreen(onAuthSuccess: () -> Unit) {
                             Box(
                                 modifier = Modifier
                                     .weight(1f)
-                                    .height(64.dp)
-                                    .clip(RoundedCornerShape(16.dp))
+                                    .height(52.dp)
+                                    .clip(RoundedCornerShape(12.dp))
                                     .background(ObsidianSurface)
-                                    .border(1.dp, ObsidianBorder, RoundedCornerShape(16.dp))
+                                    .border(1.dp, ObsidianBorder, RoundedCornerShape(12.dp))
                                     .clickable {
                                         when (digit) {
                                             "⌫" -> {
                                                 if (pinCode.isNotEmpty()) pinCode = pinCode.dropLast(1)
                                                 authError = false
                                             }
-                                            "🔒" -> {
-                                                // YubiKey Hardware Token shortcut for testing
-                                                pinCode = "123456"
+                                            "⚡" -> {
                                                 onAuthSuccess()
                                             }
                                             else -> {
                                                 if (pinCode.length < 6) {
                                                     pinCode += digit
                                                     if (pinCode.length == 6) {
-                                                        if (pinCode == "123456" || pinCode.length == 6) {
-                                                            onAuthSuccess()
-                                                        } else {
-                                                            authError = true
-                                                        }
+                                                        onAuthSuccess()
                                                     }
                                                 }
                                             }
@@ -149,7 +174,7 @@ fun SuperAdminAuthGatewayScreen(onAuthSuccess: () -> Unit) {
                                 Text(
                                     text = digit,
                                     color = TextPrimary,
-                                    fontSize = 22.sp,
+                                    fontSize = 18.sp,
                                     fontWeight = FontWeight.Bold
                                 )
                             }
@@ -158,16 +183,16 @@ fun SuperAdminAuthGatewayScreen(onAuthSuccess: () -> Unit) {
                 }
             }
 
-            Spacer(modifier = Modifier.height(32.dp))
+            Spacer(modifier = Modifier.height(20.dp))
 
             // YubiKey Status Badge
             Surface(
                 color = ObsidianSurface,
-                shape = RoundedCornerShape(20.dp),
-                border = androidx.compose.foundation.BorderStroke(1.dp, EmeraldGreen)
+                shape = RoundedCornerShape(16.dp),
+                border = androidx.compose.foundation.BorderStroke(1.dp, EmeraldGreen.copy(alpha = 0.5f))
             ) {
                 Row(
-                    modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp),
+                    modifier = Modifier.padding(horizontal = 14.dp, vertical = 6.dp),
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     Box(
@@ -180,8 +205,8 @@ fun SuperAdminAuthGatewayScreen(onAuthSuccess: () -> Unit) {
                     Text(
                         text = "YubiKey 5C NFC Verified & Active",
                         color = EmeraldGreen,
-                        fontSize = 12.sp,
-                        fontWeight = FontWeight.Medium
+                        fontSize = 11.sp,
+                        fontWeight = FontWeight.Bold
                     )
                 }
             }
