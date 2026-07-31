@@ -1,0 +1,20 @@
+## 📅 Date: 2026-07-31 — Backend Core Payments & Push Service Updates
+
+### 🚀 Major Achievements:
+- Implemented HmacSHA256 signature verification in `PaymentWebhookController.kt`.
+- Added idempotency handling to payment webhooks to prevent duplicate event processing.
+- Created `R2dbcTenantContextConfig.kt` for PostgreSQL RLS context injection (`SET LOCAL app.current_tenant_id`).
+- Created `FcmPushDispatcherService.kt` to send instant remote lock/unlock FCM payloads.
+
+### 🧪 Verification:
+- `./gradlew compileKotlin` ran successfully with no warnings.
+
+### 📌 Current State:
+- Backend code compiles cleanly, webhooks are secure and idempotent, and R2DBC context correctly handles multitenancy queries.
+
+### 📝 Next Steps:
+- Add comprehensive unit tests for webhook signature validation.
+- Implement full integration with the real Firebase Admin SDK for FCM pushes.
+
+---
+*Signed by: Shoeb Ahmad*

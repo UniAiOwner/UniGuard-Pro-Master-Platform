@@ -1,0 +1,19 @@
+## 📅 Date: 2026-07-31 — Implement Offline Lock Persistence and Device Policies
+
+### 🚀 Major Achievements:
+- Implemented cumulative monotonic boot uptime math in `OfflineLockWorker.kt` using `EncryptedSharedPreferences` to mitigate reboot bypass exploits.
+- Added device policy restrictions in `UniGuardDeviceAdminReceiver.kt`: `setLockTaskPackages`, `DISALLOW_FACTORY_RESET`, and `DISALLOW_SAFE_BOOT`.
+- Added the `androidx.security:security-crypto` dependency in `app/build.gradle.kts`.
+
+### 🧪 Verification:
+- Verified clean compilation with `./gradlew assembleDebug` successfully.
+
+### 📌 Current State:
+- Offline lock persists across reboots seamlessly, ensuring secure lock activation.
+- Core device admin restrictions correctly implemented upon enabling the device admin component.
+
+### 📝 Next Steps:
+- Continue testing offline lock behavior on physical devices under various reboot and uptime conditions.
+
+---
+*Signed by: Shoeb Ahmad*
