@@ -20,7 +20,8 @@ class R2dbcTenantContextConfig {
         override fun create(): Publisher<out Connection> {
             return Mono.from(target.create()).flatMap { connection ->
                 Mono.deferContextual { ctx ->
-                    val tenantId = ctx.getOrDefault("tenantId", "system")
+                    val tenantId = ctx.getOrDefault("tenantId", "system").toString()
+                    require(tenantId.matches(Regex("^[a-zA-Z0-9_-]+$"))) { "Invalid tenant ID format" }
                     Mono.from(connection.createStatement("SET LOCAL app.current_tenant_id = '$tenantId'").execute())
                         .thenReturn(connection)
                 }

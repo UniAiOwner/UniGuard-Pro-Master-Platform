@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.uniai.distributor.app-mergeDebugResources-33:/values-v30/values-v30.xml",
+            "outputFile": "com.uniai.distributor.app-mergeDebugResources-35:/values-v30/values-v30.xml",
             "map": [
                 {
-                    "source": "/media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/e96da1e42e9223279d5b5a0d7414f63a/transformed/material3/res/values-v30/values-v30.xml",
+                    "source": "/media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/648f623f8de2d4a1dabc0bce60ff4920/transformed/material3/res/values-v30/values-v30.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

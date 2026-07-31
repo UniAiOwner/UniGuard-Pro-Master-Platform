@@ -42,27 +42,4 @@ data class LicenseKey(
     val updatedAt: OffsetDateTime? = null
 )
 
-@Table("finance_cases")
-data class FinanceCase(
-    @Id val caseId: UUID? = null,
-    val retailerId: UUID,
-    val licenseKeyId: UUID,
-    val customerName: String,
-    val customerMobile: String,
-    val customerAadhaarHash: String?,
-    val deviceMake: String,
-    val deviceModel: String,
-    val primaryImei: String,
-    val secondaryImei: String?,
-    val serialNumber: String?,
-    val totalFinancedAmount: BigDecimal,
-    val downpaymentAmount: BigDecimal,
-    val emiAmount: BigDecimal,
-    val totalTenureMonths: Int,
-    val completedTenureMonths: Int,
-    val nextDueDate: LocalDate,
-    val caseStatus: String,
-    val currentLockState: String,
-    val createdAt: OffsetDateTime? = null,
-    val updatedAt: OffsetDateTime? = null
-)
+

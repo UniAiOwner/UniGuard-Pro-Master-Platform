@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.uniai.distributor.app-mergeDebugResources-33:/values-my/values-my.xml",
+            "outputFile": "com.uniai.distributor.app-mergeDebugResources-35:/values-my/values-my.xml",
             "map": [
                 {
-                    "source": "/media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/8ca3ceaea751498d109856fc6261998d/transformed/ui/res/values-my/values-my.xml",
+                    "source": "/media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/6ac6076d1fceabde5a9a6c1eba0f1d91/transformed/ui/res/values-my/values-my.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "/media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/e96da1e42e9223279d5b5a0d7414f63a/transformed/material3/res/values-my/values-my.xml",
+                    "source": "/media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/648f623f8de2d4a1dabc0bce60ff4920/transformed/material3/res/values-my/values-my.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -38,24 +38,7 @@
                     }
                 },
                 {
-                    "source": "/media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/2f2f4f937f17258e9a8331f3890e1ef7/transformed/foundation/res/values-my/values-my.xml",
-                    "from": {
-                        "startLines": "2,3,4",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "55,163,272",
-                        "endColumns": "107,108,107",
-                        "endOffsets": "158,267,375"
-                    },
-                    "to": {
-                        "startLines": "2,97,98",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "105,10189,10298",
-                        "endColumns": "107,108,107",
-                        "endOffsets": "208,10293,10401"
-                    }
-                },
-                {
-                    "source": "/media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/44a774f8436a0b7f9e123da681175beb/transformed/core-1.18.0/res/values-my/values-my.xml",
+                    "source": "/media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/85d20062657d9198b29aa46a19c90824/transformed/core-1.18.0/res/values-my/values-my.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -69,6 +52,23 @@
                         "startOffsets": "313,416,520,623,725,830,936,9815",
                         "endColumns": "102,103,102,101,104,105,118,100",
                         "endOffsets": "411,515,618,720,825,931,1050,9911"
+                    }
+                },
+                {
+                    "source": "/media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/e334cf860899c2e610d7e48eacb351fd/transformed/foundation/res/values-my/values-my.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,163,272",
+                        "endColumns": "107,108,107",
+                        "endOffsets": "158,267,375"
+                    },
+                    "to": {
+                        "startLines": "2,97,98",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "105,10189,10298",
+                        "endColumns": "107,108,107",
+                        "endOffsets": "208,10293,10401"
                     }
                 }
             ]
