@@ -1,0 +1,3 @@
+com.uniai.superadmin
+string app_name
+style Theme_SuperAdmin

@@ -1,0 +1,383 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /media/uniai/UniAi/PROJECTS_MIGRATED/UniGuard Pro/uniai-superadmin-android/app/src/main/AndroidManifest.xml:2:1-20:12
+INJECTED from /media/uniai/UniAi/PROJECTS_MIGRATED/UniGuard Pro/uniai-superadmin-android/app/src/main/AndroidManifest.xml:2:1-20:12
+INJECTED from /media/uniai/UniAi/PROJECTS_MIGRATED/UniGuard Pro/uniai-superadmin-android/app/src/main/AndroidManifest.xml:2:1-20:12
+INJECTED from /media/uniai/UniAi/PROJECTS_MIGRATED/UniGuard Pro/uniai-superadmin-android/app/src/main/AndroidManifest.xml:2:1-20:12
+MERGED from [androidx.autofill:autofill:1.0.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/e70ba4197e959cb26a565a5a906ac24c/transformed/autofill-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.transition:transition:1.6.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/f76a5e506f5b95bfba99647229c92bd6/transformed/transition-1.6.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.window:window-core-android:1.5.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/3033db39aea9d03a4a9abb6d012975f2/transformed/window-core/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.window:window:1.5.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/ec2d0ba6cb89b78fa6beda04ecaf811f/transformed/window-1.5.0/AndroidManifest.xml:17:1-31:12
+MERGED from [androidx.compose.material3:material3-android:1.4.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/efdd022767663cb25822a356131a4228/transformed/material3/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.compose.material:material-android:1.10.6] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/b8a7564d54165663e92d0f24c1a930db/transformed/material/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.material:material-ripple-android:1.10.6] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/ca0d05a7f61b56a4c40cf3cceda4203f/transformed/material-ripple/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.foundation:foundation-android:1.10.6] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/103c66d326a7e9e90dbe24d5eaccf7c2/transformed/foundation/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.animation:animation-android:1.10.6] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/5794e4fa64bbec8f12881c5b4f8529e6/transformed/animation/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.foundation:foundation-layout-android:1.10.6] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/9dcd6b7163715da8249816575eef2fc8/transformed/foundation-layout/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.animation:animation-core-android:1.10.6] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/2d65d1c4aad0b3d4cf7e8bd524aadfce/transformed/animation-core/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-tooling-data-android:1.10.6] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/34af44aff2469f78822c96495894f5f8/transformed/ui-tooling-data/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-unit-android:1.10.6] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/20214cf133b57439402652186132d5e6/transformed/ui-unit/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-graphics-android:1.10.6] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/d98db10b986ec6c4b1fc7376017d9608/transformed/ui-graphics/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-geometry-android:1.10.6] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/59cf84667dedcdfa65a64fd059b80d83/transformed/ui-geometry/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-util-android:1.10.6] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/7780be6472f1537d9255901d3da0e4e4/transformed/ui-util/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-tooling-preview-android:1.10.6] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/4f7c4962bac38fc3b879689d4faa8edd/transformed/ui-tooling-preview/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.compose.ui:ui-tooling-android:1.10.6] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/691c70b5a7cf00e06bc0be7af2d11b73/transformed/ui-tooling/AndroidManifest.xml:17:1-28:12
+MERGED from [androidx.compose.ui:ui-text-android:1.10.6] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/383d850a2a1df4af704d41e566c77596/transformed/ui-text/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/251033ffe7f2d93595d2b2e849f54a82/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.emoji2:emoji2:1.4.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/7e673bbf6aab9f2b7131c9f4c0965673/transformed/emoji2-1.4.0/AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.graphics:graphics-path:1.0.1] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/d555f6dccd1661e6475126a6bd4eba32/transformed/graphics-path-1.0.1/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/2ba5e3d7c727edb544aa89c0e3a05f1e/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/0cf1412b5fc014d589a3ab777fa5a477/transformed/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.18.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/597bc2107ad0e7a6d4d38ce3febcc43b/transformed/core-1.18.0/AndroidManifest.xml:17:1-30:12
+MERGED from [androidx.navigationevent:navigationevent-android:1.0.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/a5769bae183555ae7bb62e48bcca0c81/transformed/navigationevent/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.navigationevent:navigationevent-compose-android:1.0.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/0f27e24c36be53ed0ef595c0a906b01a/transformed/navigationevent-compose/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.runtime:runtime-retain-android:1.10.6] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/4bebaf8c3b8f28167d38896e864c826e/transformed/runtime-retain/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.runtime:runtime-annotation-android:1.10.6] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/704436be3ca60fea09a82a9e655075d6/transformed/runtime-annotation/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.activity:activity-ktx:1.13.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/086a1884b8194a7d3184fa3e5d660499/transformed/activity-ktx-1.13.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.10.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/aac283af24cfc183d44ddee6b2007929/transformed/lifecycle-livedata-core-ktx-2.10.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.10.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/f59c3c76ecdf28264278caa2959d5738/transformed/lifecycle-livedata-2.10.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-process:2.10.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/89900fff64818731219c129b5da9d173/transformed/lifecycle-process-2.10.0/AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.10.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/6e029057b4210518f09aa4e1217cf1c4/transformed/lifecycle-livedata-core-2.10.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.10.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/7f0b0abcac035b050d90c8391d70c325/transformed/lifecycle-viewmodel-ktx-2.10.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.10.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/6ff1b8cfb8db88da847fa1a27a71348e/transformed/lifecycle-viewmodel-2.10.0/AndroidManifest.xml:2:1-5:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-android:2.10.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/903c6c810ce1bdec67483cf15eb74278/transformed/lifecycle-viewmodel/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate-android:2.10.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/e00d387e74136feeca7aea3e8815e018/transformed/lifecycle-viewmodel-savedstate/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.savedstate:savedstate-ktx:1.4.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/e919acb204782ee7df4ba249ec80cdc5/transformed/savedstate-ktx-1.4.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.savedstate:savedstate-android:1.4.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/dbfe65987bd319be46acaed693650d14/transformed/savedstate/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.savedstate:savedstate-compose-android:1.4.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/870ce070255393597c4e7dc552100a54/transformed/savedstate-compose/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.runtime:runtime-android:1.10.6] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/1c0b8127d330935761321d0bda874f9d/transformed/runtime/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.runtime:runtime-saveable-android:1.10.6] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/640833f4c165fcdf3bdbda4c7dbb5c00/transformed/runtime-saveable/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-compose-android:2.10.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/90d012029ad6a55b366319c629c3cd25/transformed/lifecycle-runtime-compose/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-android:2.10.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/d32d71665f8d5a896f59d9efd49efdba/transformed/lifecycle-runtime/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx-android:2.10.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/3c3af6b548cd715c93752099552ec72b/transformed/lifecycle-runtime-ktx/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-compose-android:2.10.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/d4b0841baa9be1ed44ef6c03e26129f9/transformed/lifecycle-viewmodel-compose/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-android:1.10.6] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/727229aefe477e2984ec4ef397e6310a/transformed/ui/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-test-manifest:1.10.6] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/880910493df16e73b60a90043a834960/transformed/ui-test-manifest-1.10.6/AndroidManifest.xml:17:1-29:12
+MERGED from [androidx.activity:activity:1.13.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/08579da8c9560bd909f9452d7fea429c/transformed/activity-1.13.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity-compose:1.13.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/32c8ec14617741d075bdf1893b04a9bc/transformed/activity-compose-1.13.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/fc77c11c182f2a0d1902a802aebacf8f/transformed/customview-poolingcontainer-1.0.0/AndroidManifest.xml:17:1-23:12
+MERGED from [androidx.core:core-ktx:1.18.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/03d56ab163d169870ed3f8c23dc4fd36/transformed/core-ktx-1.18.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.annotation:annotation-experimental:1.4.1] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/40f073abe59c3c8d18e961893d537925/transformed/annotation-experimental-1.4.1/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.core:core-viewtree:1.0.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/f6f41086b1660f2d7d01691cd1891d94/transformed/core-viewtree-1.0.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/3d8e9d8eaaca493d8033d9d745ae0680/transformed/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.profileinstaller:profileinstaller:1.4.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/c89308eeea6fcb9619bce7555c063f7b/transformed/profileinstaller-1.4.0/AndroidManifest.xml:17:1-55:12
+MERGED from [androidx.startup:startup-runtime:1.1.1] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/3baca41e93115375181bf864a1e7775c/transformed/startup-runtime-1.1.1/AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.tracing:tracing:1.2.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/2c5d31435e28ad030b91d5525ff274b9/transformed/tracing-1.2.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/aa86225d57655e85d5701926354f27aa/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/db63007b766320a035e13b2912ba4f4c/transformed/core-runtime-2.2.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/6a5b4e969329e92b9e8a08552a2c0633/transformed/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/4d4a54993054b3f11bde86f6ab297a64/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/6676c1b6fead4a280ee9cd1f01c91d93/transformed/print-1.0.0/AndroidManifest.xml:17:1-22:12
+	package
+		INJECTED from /media/uniai/UniAi/PROJECTS_MIGRATED/UniGuard Pro/uniai-superadmin-android/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /media/uniai/UniAi/PROJECTS_MIGRATED/UniGuard Pro/uniai-superadmin-android/app/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /media/uniai/UniAi/PROJECTS_MIGRATED/UniGuard Pro/uniai-superadmin-android/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /media/uniai/UniAi/PROJECTS_MIGRATED/UniGuard Pro/uniai-superadmin-android/app/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.INTERNET
+ADDED from /media/uniai/UniAi/PROJECTS_MIGRATED/UniGuard Pro/uniai-superadmin-android/app/src/main/AndroidManifest.xml:4:5-67
+	android:name
+		ADDED from /media/uniai/UniAi/PROJECTS_MIGRATED/UniGuard Pro/uniai-superadmin-android/app/src/main/AndroidManifest.xml:4:22-64
+application
+ADDED from /media/uniai/UniAi/PROJECTS_MIGRATED/UniGuard Pro/uniai-superadmin-android/app/src/main/AndroidManifest.xml:6:5-19:19
+INJECTED from /media/uniai/UniAi/PROJECTS_MIGRATED/UniGuard Pro/uniai-superadmin-android/app/src/main/AndroidManifest.xml:6:5-19:19
+MERGED from [androidx.window:window:1.5.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/ec2d0ba6cb89b78fa6beda04ecaf811f/transformed/window-1.5.0/AndroidManifest.xml:22:5-29:19
+MERGED from [androidx.window:window:1.5.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/ec2d0ba6cb89b78fa6beda04ecaf811f/transformed/window-1.5.0/AndroidManifest.xml:22:5-29:19
+MERGED from [androidx.compose.ui:ui-tooling-android:1.10.6] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/691c70b5a7cf00e06bc0be7af2d11b73/transformed/ui-tooling/AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.compose.ui:ui-tooling-android:1.10.6] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/691c70b5a7cf00e06bc0be7af2d11b73/transformed/ui-tooling/AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.emoji2:emoji2:1.4.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/7e673bbf6aab9f2b7131c9f4c0965673/transformed/emoji2-1.4.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.emoji2:emoji2:1.4.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/7e673bbf6aab9f2b7131c9f4c0965673/transformed/emoji2-1.4.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.core:core:1.18.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/597bc2107ad0e7a6d4d38ce3febcc43b/transformed/core-1.18.0/AndroidManifest.xml:28:5-89
+MERGED from [androidx.core:core:1.18.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/597bc2107ad0e7a6d4d38ce3febcc43b/transformed/core-1.18.0/AndroidManifest.xml:28:5-89
+MERGED from [androidx.lifecycle:lifecycle-process:2.10.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/89900fff64818731219c129b5da9d173/transformed/lifecycle-process-2.10.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.10.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/89900fff64818731219c129b5da9d173/transformed/lifecycle-process-2.10.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.compose.ui:ui-test-manifest:1.10.6] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/880910493df16e73b60a90043a834960/transformed/ui-test-manifest-1.10.6/AndroidManifest.xml:22:5-27:19
+MERGED from [androidx.compose.ui:ui-test-manifest:1.10.6] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/880910493df16e73b60a90043a834960/transformed/ui-test-manifest-1.10.6/AndroidManifest.xml:22:5-27:19
+MERGED from [androidx.profileinstaller:profileinstaller:1.4.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/c89308eeea6fcb9619bce7555c063f7b/transformed/profileinstaller-1.4.0/AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.profileinstaller:profileinstaller:1.4.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/c89308eeea6fcb9619bce7555c063f7b/transformed/profileinstaller-1.4.0/AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/3baca41e93115375181bf864a1e7775c/transformed/startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/3baca41e93115375181bf864a1e7775c/transformed/startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/aa86225d57655e85d5701926354f27aa/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/aa86225d57655e85d5701926354f27aa/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+	android:extractNativeLibs
+		INJECTED from /media/uniai/UniAi/PROJECTS_MIGRATED/UniGuard Pro/uniai-superadmin-android/app/src/main/AndroidManifest.xml
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.18.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/597bc2107ad0e7a6d4d38ce3febcc43b/transformed/core-1.18.0/AndroidManifest.xml:28:18-86
+	android:supportsRtl
+		ADDED from /media/uniai/UniAi/PROJECTS_MIGRATED/UniGuard Pro/uniai-superadmin-android/app/src/main/AndroidManifest.xml:9:9-35
+	android:label
+		ADDED from /media/uniai/UniAi/PROJECTS_MIGRATED/UniGuard Pro/uniai-superadmin-android/app/src/main/AndroidManifest.xml:8:9-41
+	android:allowBackup
+		ADDED from /media/uniai/UniAi/PROJECTS_MIGRATED/UniGuard Pro/uniai-superadmin-android/app/src/main/AndroidManifest.xml:7:9-35
+	android:theme
+		ADDED from /media/uniai/UniAi/PROJECTS_MIGRATED/UniGuard Pro/uniai-superadmin-android/app/src/main/AndroidManifest.xml:10:9-48
+activity#com.uniai.superadmin.MainActivity
+ADDED from /media/uniai/UniAi/PROJECTS_MIGRATED/UniGuard Pro/uniai-superadmin-android/app/src/main/AndroidManifest.xml:11:9-18:20
+	android:exported
+		ADDED from /media/uniai/UniAi/PROJECTS_MIGRATED/UniGuard Pro/uniai-superadmin-android/app/src/main/AndroidManifest.xml:13:13-36
+	android:name
+		ADDED from /media/uniai/UniAi/PROJECTS_MIGRATED/UniGuard Pro/uniai-superadmin-android/app/src/main/AndroidManifest.xml:12:13-41
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.action.LAUNCHER
+ADDED from /media/uniai/UniAi/PROJECTS_MIGRATED/UniGuard Pro/uniai-superadmin-android/app/src/main/AndroidManifest.xml:14:13-17:29
+action#android.intent.action.MAIN
+ADDED from /media/uniai/UniAi/PROJECTS_MIGRATED/UniGuard Pro/uniai-superadmin-android/app/src/main/AndroidManifest.xml:15:17-69
+	android:name
+		ADDED from /media/uniai/UniAi/PROJECTS_MIGRATED/UniGuard Pro/uniai-superadmin-android/app/src/main/AndroidManifest.xml:15:25-66
+category#android.intent.action.LAUNCHER
+ADDED from /media/uniai/UniAi/PROJECTS_MIGRATED/UniGuard Pro/uniai-superadmin-android/app/src/main/AndroidManifest.xml:16:17-75
+	android:name
+		ADDED from /media/uniai/UniAi/PROJECTS_MIGRATED/UniGuard Pro/uniai-superadmin-android/app/src/main/AndroidManifest.xml:16:27-72
+uses-sdk
+INJECTED from /media/uniai/UniAi/PROJECTS_MIGRATED/UniGuard Pro/uniai-superadmin-android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /media/uniai/UniAi/PROJECTS_MIGRATED/UniGuard Pro/uniai-superadmin-android/app/src/main/AndroidManifest.xml
+INJECTED from /media/uniai/UniAi/PROJECTS_MIGRATED/UniGuard Pro/uniai-superadmin-android/app/src/main/AndroidManifest.xml
+MERGED from [androidx.autofill:autofill:1.0.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/e70ba4197e959cb26a565a5a906ac24c/transformed/autofill-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.autofill:autofill:1.0.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/e70ba4197e959cb26a565a5a906ac24c/transformed/autofill-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.6.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/f76a5e506f5b95bfba99647229c92bd6/transformed/transition-1.6.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.transition:transition:1.6.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/f76a5e506f5b95bfba99647229c92bd6/transformed/transition-1.6.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.window:window-core-android:1.5.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/3033db39aea9d03a4a9abb6d012975f2/transformed/window-core/AndroidManifest.xml:5:5-44
+MERGED from [androidx.window:window-core-android:1.5.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/3033db39aea9d03a4a9abb6d012975f2/transformed/window-core/AndroidManifest.xml:5:5-44
+MERGED from [androidx.window:window:1.5.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/ec2d0ba6cb89b78fa6beda04ecaf811f/transformed/window-1.5.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.window:window:1.5.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/ec2d0ba6cb89b78fa6beda04ecaf811f/transformed/window-1.5.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.material3:material3-android:1.4.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/efdd022767663cb25822a356131a4228/transformed/material3/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.material3:material3-android:1.4.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/efdd022767663cb25822a356131a4228/transformed/material3/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.material:material-android:1.10.6] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/b8a7564d54165663e92d0f24c1a930db/transformed/material/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-android:1.10.6] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/b8a7564d54165663e92d0f24c1a930db/transformed/material/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-ripple-android:1.10.6] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/ca0d05a7f61b56a4c40cf3cceda4203f/transformed/material-ripple/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-ripple-android:1.10.6] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/ca0d05a7f61b56a4c40cf3cceda4203f/transformed/material-ripple/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.foundation:foundation-android:1.10.6] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/103c66d326a7e9e90dbe24d5eaccf7c2/transformed/foundation/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.foundation:foundation-android:1.10.6] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/103c66d326a7e9e90dbe24d5eaccf7c2/transformed/foundation/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.animation:animation-android:1.10.6] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/5794e4fa64bbec8f12881c5b4f8529e6/transformed/animation/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.animation:animation-android:1.10.6] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/5794e4fa64bbec8f12881c5b4f8529e6/transformed/animation/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.foundation:foundation-layout-android:1.10.6] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/9dcd6b7163715da8249816575eef2fc8/transformed/foundation-layout/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.foundation:foundation-layout-android:1.10.6] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/9dcd6b7163715da8249816575eef2fc8/transformed/foundation-layout/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.animation:animation-core-android:1.10.6] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/2d65d1c4aad0b3d4cf7e8bd524aadfce/transformed/animation-core/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.animation:animation-core-android:1.10.6] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/2d65d1c4aad0b3d4cf7e8bd524aadfce/transformed/animation-core/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-tooling-data-android:1.10.6] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/34af44aff2469f78822c96495894f5f8/transformed/ui-tooling-data/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-tooling-data-android:1.10.6] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/34af44aff2469f78822c96495894f5f8/transformed/ui-tooling-data/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-unit-android:1.10.6] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/20214cf133b57439402652186132d5e6/transformed/ui-unit/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-unit-android:1.10.6] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/20214cf133b57439402652186132d5e6/transformed/ui-unit/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-graphics-android:1.10.6] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/d98db10b986ec6c4b1fc7376017d9608/transformed/ui-graphics/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-graphics-android:1.10.6] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/d98db10b986ec6c4b1fc7376017d9608/transformed/ui-graphics/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-geometry-android:1.10.6] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/59cf84667dedcdfa65a64fd059b80d83/transformed/ui-geometry/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-geometry-android:1.10.6] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/59cf84667dedcdfa65a64fd059b80d83/transformed/ui-geometry/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-util-android:1.10.6] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/7780be6472f1537d9255901d3da0e4e4/transformed/ui-util/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-util-android:1.10.6] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/7780be6472f1537d9255901d3da0e4e4/transformed/ui-util/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-tooling-preview-android:1.10.6] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/4f7c4962bac38fc3b879689d4faa8edd/transformed/ui-tooling-preview/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-tooling-preview-android:1.10.6] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/4f7c4962bac38fc3b879689d4faa8edd/transformed/ui-tooling-preview/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-tooling-android:1.10.6] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/691c70b5a7cf00e06bc0be7af2d11b73/transformed/ui-tooling/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-tooling-android:1.10.6] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/691c70b5a7cf00e06bc0be7af2d11b73/transformed/ui-tooling/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-text-android:1.10.6] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/383d850a2a1df4af704d41e566c77596/transformed/ui-text/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-text-android:1.10.6] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/383d850a2a1df4af704d41e566c77596/transformed/ui-text/AndroidManifest.xml:5:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/251033ffe7f2d93595d2b2e849f54a82/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/251033ffe7f2d93595d2b2e849f54a82/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.emoji2:emoji2:1.4.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/7e673bbf6aab9f2b7131c9f4c0965673/transformed/emoji2-1.4.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.emoji2:emoji2:1.4.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/7e673bbf6aab9f2b7131c9f4c0965673/transformed/emoji2-1.4.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.graphics:graphics-path:1.0.1] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/d555f6dccd1661e6475126a6bd4eba32/transformed/graphics-path-1.0.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.graphics:graphics-path:1.0.1] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/d555f6dccd1661e6475126a6bd4eba32/transformed/graphics-path-1.0.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/2ba5e3d7c727edb544aa89c0e3a05f1e/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/2ba5e3d7c727edb544aa89c0e3a05f1e/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/0cf1412b5fc014d589a3ab777fa5a477/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/0cf1412b5fc014d589a3ab777fa5a477/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.18.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/597bc2107ad0e7a6d4d38ce3febcc43b/transformed/core-1.18.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.18.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/597bc2107ad0e7a6d4d38ce3febcc43b/transformed/core-1.18.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigationevent:navigationevent-android:1.0.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/a5769bae183555ae7bb62e48bcca0c81/transformed/navigationevent/AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigationevent:navigationevent-android:1.0.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/a5769bae183555ae7bb62e48bcca0c81/transformed/navigationevent/AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigationevent:navigationevent-compose-android:1.0.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/0f27e24c36be53ed0ef595c0a906b01a/transformed/navigationevent-compose/AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigationevent:navigationevent-compose-android:1.0.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/0f27e24c36be53ed0ef595c0a906b01a/transformed/navigationevent-compose/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-retain-android:1.10.6] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/4bebaf8c3b8f28167d38896e864c826e/transformed/runtime-retain/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-retain-android:1.10.6] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/4bebaf8c3b8f28167d38896e864c826e/transformed/runtime-retain/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-annotation-android:1.10.6] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/704436be3ca60fea09a82a9e655075d6/transformed/runtime-annotation/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-annotation-android:1.10.6] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/704436be3ca60fea09a82a9e655075d6/transformed/runtime-annotation/AndroidManifest.xml:5:5-44
+MERGED from [androidx.activity:activity-ktx:1.13.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/086a1884b8194a7d3184fa3e5d660499/transformed/activity-ktx-1.13.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.activity:activity-ktx:1.13.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/086a1884b8194a7d3184fa3e5d660499/transformed/activity-ktx-1.13.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.10.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/aac283af24cfc183d44ddee6b2007929/transformed/lifecycle-livedata-core-ktx-2.10.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.10.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/aac283af24cfc183d44ddee6b2007929/transformed/lifecycle-livedata-core-ktx-2.10.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.10.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/f59c3c76ecdf28264278caa2959d5738/transformed/lifecycle-livedata-2.10.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.10.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/f59c3c76ecdf28264278caa2959d5738/transformed/lifecycle-livedata-2.10.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.10.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/89900fff64818731219c129b5da9d173/transformed/lifecycle-process-2.10.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.10.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/89900fff64818731219c129b5da9d173/transformed/lifecycle-process-2.10.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.10.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/6e029057b4210518f09aa4e1217cf1c4/transformed/lifecycle-livedata-core-2.10.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.10.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/6e029057b4210518f09aa4e1217cf1c4/transformed/lifecycle-livedata-core-2.10.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.10.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/7f0b0abcac035b050d90c8391d70c325/transformed/lifecycle-viewmodel-ktx-2.10.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.10.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/7f0b0abcac035b050d90c8391d70c325/transformed/lifecycle-viewmodel-ktx-2.10.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.10.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/6ff1b8cfb8db88da847fa1a27a71348e/transformed/lifecycle-viewmodel-2.10.0/AndroidManifest.xml:4:5-43
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.10.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/6ff1b8cfb8db88da847fa1a27a71348e/transformed/lifecycle-viewmodel-2.10.0/AndroidManifest.xml:4:5-43
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-android:2.10.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/903c6c810ce1bdec67483cf15eb74278/transformed/lifecycle-viewmodel/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-android:2.10.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/903c6c810ce1bdec67483cf15eb74278/transformed/lifecycle-viewmodel/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate-android:2.10.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/e00d387e74136feeca7aea3e8815e018/transformed/lifecycle-viewmodel-savedstate/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate-android:2.10.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/e00d387e74136feeca7aea3e8815e018/transformed/lifecycle-viewmodel-savedstate/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate-ktx:1.4.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/e919acb204782ee7df4ba249ec80cdc5/transformed/savedstate-ktx-1.4.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.savedstate:savedstate-ktx:1.4.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/e919acb204782ee7df4ba249ec80cdc5/transformed/savedstate-ktx-1.4.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.savedstate:savedstate-android:1.4.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/dbfe65987bd319be46acaed693650d14/transformed/savedstate/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate-android:1.4.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/dbfe65987bd319be46acaed693650d14/transformed/savedstate/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate-compose-android:1.4.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/870ce070255393597c4e7dc552100a54/transformed/savedstate-compose/AndroidManifest.xml:5:5-44
+MERGED from [androidx.savedstate:savedstate-compose-android:1.4.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/870ce070255393597c4e7dc552100a54/transformed/savedstate-compose/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-android:1.10.6] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/1c0b8127d330935761321d0bda874f9d/transformed/runtime/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-android:1.10.6] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/1c0b8127d330935761321d0bda874f9d/transformed/runtime/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-saveable-android:1.10.6] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/640833f4c165fcdf3bdbda4c7dbb5c00/transformed/runtime-saveable/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-saveable-android:1.10.6] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/640833f4c165fcdf3bdbda4c7dbb5c00/transformed/runtime-saveable/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-compose-android:2.10.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/90d012029ad6a55b366319c629c3cd25/transformed/lifecycle-runtime-compose/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-compose-android:2.10.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/90d012029ad6a55b366319c629c3cd25/transformed/lifecycle-runtime-compose/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-android:2.10.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/d32d71665f8d5a896f59d9efd49efdba/transformed/lifecycle-runtime/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-android:2.10.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/d32d71665f8d5a896f59d9efd49efdba/transformed/lifecycle-runtime/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx-android:2.10.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/3c3af6b548cd715c93752099552ec72b/transformed/lifecycle-runtime-ktx/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx-android:2.10.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/3c3af6b548cd715c93752099552ec72b/transformed/lifecycle-runtime-ktx/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-compose-android:2.10.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/d4b0841baa9be1ed44ef6c03e26129f9/transformed/lifecycle-viewmodel-compose/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-compose-android:2.10.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/d4b0841baa9be1ed44ef6c03e26129f9/transformed/lifecycle-viewmodel-compose/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-android:1.10.6] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/727229aefe477e2984ec4ef397e6310a/transformed/ui/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-android:1.10.6] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/727229aefe477e2984ec4ef397e6310a/transformed/ui/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-test-manifest:1.10.6] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/880910493df16e73b60a90043a834960/transformed/ui-test-manifest-1.10.6/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-test-manifest:1.10.6] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/880910493df16e73b60a90043a834960/transformed/ui-test-manifest-1.10.6/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.13.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/08579da8c9560bd909f9452d7fea429c/transformed/activity-1.13.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.13.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/08579da8c9560bd909f9452d7fea429c/transformed/activity-1.13.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity-compose:1.13.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/32c8ec14617741d075bdf1893b04a9bc/transformed/activity-compose-1.13.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.activity:activity-compose:1.13.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/32c8ec14617741d075bdf1893b04a9bc/transformed/activity-compose-1.13.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/fc77c11c182f2a0d1902a802aebacf8f/transformed/customview-poolingcontainer-1.0.0/AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/fc77c11c182f2a0d1902a802aebacf8f/transformed/customview-poolingcontainer-1.0.0/AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.core:core-ktx:1.18.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/03d56ab163d169870ed3f8c23dc4fd36/transformed/core-ktx-1.18.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core-ktx:1.18.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/03d56ab163d169870ed3f8c23dc4fd36/transformed/core-ktx-1.18.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.4.1] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/40f073abe59c3c8d18e961893d537925/transformed/annotation-experimental-1.4.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.4.1] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/40f073abe59c3c8d18e961893d537925/transformed/annotation-experimental-1.4.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core-viewtree:1.0.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/f6f41086b1660f2d7d01691cd1891d94/transformed/core-viewtree-1.0.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core-viewtree:1.0.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/f6f41086b1660f2d7d01691cd1891d94/transformed/core-viewtree-1.0.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/3d8e9d8eaaca493d8033d9d745ae0680/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/3d8e9d8eaaca493d8033d9d745ae0680/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.profileinstaller:profileinstaller:1.4.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/c89308eeea6fcb9619bce7555c063f7b/transformed/profileinstaller-1.4.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.profileinstaller:profileinstaller:1.4.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/c89308eeea6fcb9619bce7555c063f7b/transformed/profileinstaller-1.4.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.startup:startup-runtime:1.1.1] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/3baca41e93115375181bf864a1e7775c/transformed/startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.startup:startup-runtime:1.1.1] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/3baca41e93115375181bf864a1e7775c/transformed/startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.tracing:tracing:1.2.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/2c5d31435e28ad030b91d5525ff274b9/transformed/tracing-1.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.tracing:tracing:1.2.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/2c5d31435e28ad030b91d5525ff274b9/transformed/tracing-1.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/aa86225d57655e85d5701926354f27aa/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/aa86225d57655e85d5701926354f27aa/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/db63007b766320a035e13b2912ba4f4c/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/db63007b766320a035e13b2912ba4f4c/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/6a5b4e969329e92b9e8a08552a2c0633/transformed/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/6a5b4e969329e92b9e8a08552a2c0633/transformed/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/4d4a54993054b3f11bde86f6ab297a64/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/4d4a54993054b3f11bde86f6ab297a64/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/6676c1b6fead4a280ee9cd1f01c91d93/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/6676c1b6fead4a280ee9cd1f01c91d93/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
+	android:targetSdkVersion
+		INJECTED from /media/uniai/UniAi/PROJECTS_MIGRATED/UniGuard Pro/uniai-superadmin-android/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /media/uniai/UniAi/PROJECTS_MIGRATED/UniGuard Pro/uniai-superadmin-android/app/src/main/AndroidManifest.xml
+uses-library#androidx.window.extensions
+ADDED from [androidx.window:window:1.5.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/ec2d0ba6cb89b78fa6beda04ecaf811f/transformed/window-1.5.0/AndroidManifest.xml:23:9-25:40
+	android:required
+		ADDED from [androidx.window:window:1.5.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/ec2d0ba6cb89b78fa6beda04ecaf811f/transformed/window-1.5.0/AndroidManifest.xml:25:13-37
+	android:name
+		ADDED from [androidx.window:window:1.5.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/ec2d0ba6cb89b78fa6beda04ecaf811f/transformed/window-1.5.0/AndroidManifest.xml:24:13-54
+uses-library#androidx.window.sidecar
+ADDED from [androidx.window:window:1.5.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/ec2d0ba6cb89b78fa6beda04ecaf811f/transformed/window-1.5.0/AndroidManifest.xml:26:9-28:40
+	android:required
+		ADDED from [androidx.window:window:1.5.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/ec2d0ba6cb89b78fa6beda04ecaf811f/transformed/window-1.5.0/AndroidManifest.xml:28:13-37
+	android:name
+		ADDED from [androidx.window:window:1.5.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/ec2d0ba6cb89b78fa6beda04ecaf811f/transformed/window-1.5.0/AndroidManifest.xml:27:13-51
+activity#androidx.compose.ui.tooling.PreviewActivity
+ADDED from [androidx.compose.ui:ui-tooling-android:1.10.6] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/691c70b5a7cf00e06bc0be7af2d11b73/transformed/ui-tooling/AndroidManifest.xml:23:9-25:39
+	android:exported
+		ADDED from [androidx.compose.ui:ui-tooling-android:1.10.6] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/691c70b5a7cf00e06bc0be7af2d11b73/transformed/ui-tooling/AndroidManifest.xml:25:13-36
+	android:name
+		ADDED from [androidx.compose.ui:ui-tooling-android:1.10.6] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/691c70b5a7cf00e06bc0be7af2d11b73/transformed/ui-tooling/AndroidManifest.xml:24:13-71
+provider#androidx.startup.InitializationProvider
+ADDED from [androidx.emoji2:emoji2:1.4.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/7e673bbf6aab9f2b7131c9f4c0965673/transformed/emoji2-1.4.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.10.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/89900fff64818731219c129b5da9d173/transformed/lifecycle-process-2.10.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.10.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/89900fff64818731219c129b5da9d173/transformed/lifecycle-process-2.10.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.4.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/c89308eeea6fcb9619bce7555c063f7b/transformed/profileinstaller-1.4.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.4.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/c89308eeea6fcb9619bce7555c063f7b/transformed/profileinstaller-1.4.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.startup:startup-runtime:1.1.1] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/3baca41e93115375181bf864a1e7775c/transformed/startup-runtime-1.1.1/AndroidManifest.xml:26:9-30:34
+MERGED from [androidx.startup:startup-runtime:1.1.1] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/3baca41e93115375181bf864a1e7775c/transformed/startup-runtime-1.1.1/AndroidManifest.xml:26:9-30:34
+	tools:node
+		ADDED from [androidx.emoji2:emoji2:1.4.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/7e673bbf6aab9f2b7131c9f4c0965673/transformed/emoji2-1.4.0/AndroidManifest.xml:28:13-31
+	android:authorities
+		ADDED from [androidx.emoji2:emoji2:1.4.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/7e673bbf6aab9f2b7131c9f4c0965673/transformed/emoji2-1.4.0/AndroidManifest.xml:26:13-68
+	android:exported
+		ADDED from [androidx.emoji2:emoji2:1.4.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/7e673bbf6aab9f2b7131c9f4c0965673/transformed/emoji2-1.4.0/AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.4.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/7e673bbf6aab9f2b7131c9f4c0965673/transformed/emoji2-1.4.0/AndroidManifest.xml:25:13-67
+meta-data#androidx.emoji2.text.EmojiCompatInitializer
+ADDED from [androidx.emoji2:emoji2:1.4.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/7e673bbf6aab9f2b7131c9f4c0965673/transformed/emoji2-1.4.0/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.emoji2:emoji2:1.4.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/7e673bbf6aab9f2b7131c9f4c0965673/transformed/emoji2-1.4.0/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.4.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/7e673bbf6aab9f2b7131c9f4c0965673/transformed/emoji2-1.4.0/AndroidManifest.xml:30:17-75
+permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.18.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/597bc2107ad0e7a6d4d38ce3febcc43b/transformed/core-1.18.0/AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.18.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/597bc2107ad0e7a6d4d38ce3febcc43b/transformed/core-1.18.0/AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.18.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/597bc2107ad0e7a6d4d38ce3febcc43b/transformed/core-1.18.0/AndroidManifest.xml:23:9-81
+permission#com.uniai.superadmin.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.18.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/597bc2107ad0e7a6d4d38ce3febcc43b/transformed/core-1.18.0/AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.18.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/597bc2107ad0e7a6d4d38ce3febcc43b/transformed/core-1.18.0/AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.18.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/597bc2107ad0e7a6d4d38ce3febcc43b/transformed/core-1.18.0/AndroidManifest.xml:23:9-81
+uses-permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.18.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/597bc2107ad0e7a6d4d38ce3febcc43b/transformed/core-1.18.0/AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.18.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/597bc2107ad0e7a6d4d38ce3febcc43b/transformed/core-1.18.0/AndroidManifest.xml:26:22-94
+uses-permission#com.uniai.superadmin.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.18.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/597bc2107ad0e7a6d4d38ce3febcc43b/transformed/core-1.18.0/AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.18.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/597bc2107ad0e7a6d4d38ce3febcc43b/transformed/core-1.18.0/AndroidManifest.xml:26:22-94
+meta-data#androidx.lifecycle.ProcessLifecycleInitializer
+ADDED from [androidx.lifecycle:lifecycle-process:2.10.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/89900fff64818731219c129b5da9d173/transformed/lifecycle-process-2.10.0/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.lifecycle:lifecycle-process:2.10.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/89900fff64818731219c129b5da9d173/transformed/lifecycle-process-2.10.0/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.lifecycle:lifecycle-process:2.10.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/89900fff64818731219c129b5da9d173/transformed/lifecycle-process-2.10.0/AndroidManifest.xml:30:17-78
+activity#androidx.activity.ComponentActivity
+ADDED from [androidx.compose.ui:ui-test-manifest:1.10.6] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/880910493df16e73b60a90043a834960/transformed/ui-test-manifest-1.10.6/AndroidManifest.xml:23:9-26:79
+	android:exported
+		ADDED from [androidx.compose.ui:ui-test-manifest:1.10.6] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/880910493df16e73b60a90043a834960/transformed/ui-test-manifest-1.10.6/AndroidManifest.xml:25:13-36
+	android:theme
+		ADDED from [androidx.compose.ui:ui-test-manifest:1.10.6] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/880910493df16e73b60a90043a834960/transformed/ui-test-manifest-1.10.6/AndroidManifest.xml:26:13-76
+	android:name
+		ADDED from [androidx.compose.ui:ui-test-manifest:1.10.6] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/880910493df16e73b60a90043a834960/transformed/ui-test-manifest-1.10.6/AndroidManifest.xml:24:13-63
+meta-data#androidx.profileinstaller.ProfileInstallerInitializer
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/c89308eeea6fcb9619bce7555c063f7b/transformed/profileinstaller-1.4.0/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/c89308eeea6fcb9619bce7555c063f7b/transformed/profileinstaller-1.4.0/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/c89308eeea6fcb9619bce7555c063f7b/transformed/profileinstaller-1.4.0/AndroidManifest.xml:30:17-85
+receiver#androidx.profileinstaller.ProfileInstallReceiver
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/c89308eeea6fcb9619bce7555c063f7b/transformed/profileinstaller-1.4.0/AndroidManifest.xml:34:9-52:20
+	android:enabled
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/c89308eeea6fcb9619bce7555c063f7b/transformed/profileinstaller-1.4.0/AndroidManifest.xml:37:13-35
+	android:exported
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/c89308eeea6fcb9619bce7555c063f7b/transformed/profileinstaller-1.4.0/AndroidManifest.xml:38:13-36
+	android:permission
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/c89308eeea6fcb9619bce7555c063f7b/transformed/profileinstaller-1.4.0/AndroidManifest.xml:39:13-57
+	android:directBootAware
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/c89308eeea6fcb9619bce7555c063f7b/transformed/profileinstaller-1.4.0/AndroidManifest.xml:36:13-44
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/c89308eeea6fcb9619bce7555c063f7b/transformed/profileinstaller-1.4.0/AndroidManifest.xml:35:13-76
+intent-filter#action:name:androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/c89308eeea6fcb9619bce7555c063f7b/transformed/profileinstaller-1.4.0/AndroidManifest.xml:40:13-42:29
+action#androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/c89308eeea6fcb9619bce7555c063f7b/transformed/profileinstaller-1.4.0/AndroidManifest.xml:41:17-91
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/c89308eeea6fcb9619bce7555c063f7b/transformed/profileinstaller-1.4.0/AndroidManifest.xml:41:25-88
+intent-filter#action:name:androidx.profileinstaller.action.SKIP_FILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/c89308eeea6fcb9619bce7555c063f7b/transformed/profileinstaller-1.4.0/AndroidManifest.xml:43:13-45:29
+action#androidx.profileinstaller.action.SKIP_FILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/c89308eeea6fcb9619bce7555c063f7b/transformed/profileinstaller-1.4.0/AndroidManifest.xml:44:17-85
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/c89308eeea6fcb9619bce7555c063f7b/transformed/profileinstaller-1.4.0/AndroidManifest.xml:44:25-82
+intent-filter#action:name:androidx.profileinstaller.action.SAVE_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/c89308eeea6fcb9619bce7555c063f7b/transformed/profileinstaller-1.4.0/AndroidManifest.xml:46:13-48:29
+action#androidx.profileinstaller.action.SAVE_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/c89308eeea6fcb9619bce7555c063f7b/transformed/profileinstaller-1.4.0/AndroidManifest.xml:47:17-88
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/c89308eeea6fcb9619bce7555c063f7b/transformed/profileinstaller-1.4.0/AndroidManifest.xml:47:25-85
+intent-filter#action:name:androidx.profileinstaller.action.BENCHMARK_OPERATION
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/c89308eeea6fcb9619bce7555c063f7b/transformed/profileinstaller-1.4.0/AndroidManifest.xml:49:13-51:29
+action#androidx.profileinstaller.action.BENCHMARK_OPERATION
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/c89308eeea6fcb9619bce7555c063f7b/transformed/profileinstaller-1.4.0/AndroidManifest.xml:50:17-95
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/c89308eeea6fcb9619bce7555c063f7b/transformed/profileinstaller-1.4.0/AndroidManifest.xml:50:25-92
