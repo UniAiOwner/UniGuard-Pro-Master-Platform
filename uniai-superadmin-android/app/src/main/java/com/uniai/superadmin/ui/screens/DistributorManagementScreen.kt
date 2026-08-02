@@ -211,22 +211,19 @@ fun DistributorManagementScreen() {
         }
 
         if (showAddDialog) {
-            AddDistributorDialog(
-                onDismiss = { showAddDialog = false },
-                onAdd = { name, owner, phone, region, keys, price ->
-                    distributors = distributors + SuperAdminDistributor(
-                        id = (distributors.size + 1).toString(),
-                        name = name,
-                        owner = owner,
-                        phone = phone,
-                        region = region,
-                        keysAllocated = keys,
-                        pricePerKey = price,
-                        activeRetailers = 0,
-                        status = "ACTIVE"
-                    )
-                    showAddDialog = false
-                }
+            AlertDialog(
+                onDismissRequest = { showAddDialog = false },
+                title = { Text("ONBOARD NEW DISTRIBUTOR", color = Color.White, fontWeight = FontWeight.Bold) },
+                text = { Text("To onboard a new territory distributor, please navigate to the 'Create Distributor' wizard module.", color = TextSecondary) },
+                confirmButton = {
+                    Button(
+                        onClick = { showAddDialog = false },
+                        colors = ButtonDefaults.buttonColors(containerColor = NeonCyan, contentColor = ObsidianBackground)
+                    ) {
+                        Text("OK")
+                    }
+                },
+                containerColor = ObsidianCard
             )
         }
     }
