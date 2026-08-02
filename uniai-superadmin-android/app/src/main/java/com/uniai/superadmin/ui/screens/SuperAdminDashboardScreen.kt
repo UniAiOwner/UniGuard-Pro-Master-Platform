@@ -1,11 +1,9 @@
 package com.uniai.superadmin.ui.screens
 
+import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.grid.GridCells
-import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
-import androidx.compose.foundation.lazy.grid.items
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
@@ -16,20 +14,30 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.StrokeCap
+import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.uniai.superadmin.ui.theme.*
 
-data class MetricCardData(
+// Exact colors matching 01_Dashboard_Overview.jpg
+val CardPurple = Color(0xFF6B4EFF)
+val CardGreen = Color(0xFF10B981)
+val CardRed = Color(0xFFEF4444)
+val CardAmber = Color(0xFFF59E0B)
+val CardBlue = Color(0xFF3B82F6)
+val ChartGrey = Color(0xFF4B5563)
+
+data class ExactMetricCard(
     val title: String,
     val value: String,
     val trend: String,
-    val isPositive: Boolean,
+    val isUp: Boolean,
+    val isRedTrend: Boolean = false,
     val icon: ImageVector,
-    val accentColor: Color,
-    val onClick: () -> Unit
+    val iconBgColor: Color
 )
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -41,254 +49,277 @@ fun SuperAdminDashboardScreen(
     onNavigateToCommands: () -> Unit = {},
     onNavigateToDistributors: () -> Unit = {}
 ) {
-    val metricCards = listOf(
-        MetricCardData(
-            title = "ACTIVE CONNECTED FLEET",
-            value = "94,321",
-            trend = "+5.2% Growth",
-            isPositive = true,
-            icon = Icons.Default.PhonelinkRing,
-            accentColor = NeonCyan,
-            onClick = onNavigateToDevices
-        ),
-        MetricCardData(
-            title = "CRITICAL THREAT ALERTS",
-            value = "14 Active",
-            trend = "Action Required",
-            isPositive = false,
-            icon = Icons.Default.Warning,
-            accentColor = CrimsonRed,
-            onClick = onNavigateToFraud
-        ),
-        MetricCardData(
-            title = "ACTIVE SUBSCRIPTIONS",
-            value = "128,450",
-            trend = "+12.4% MTD",
-            isPositive = true,
-            icon = Icons.Default.CheckCircle,
-            accentColor = EmeraldGreen,
-            onClick = {}
-        ),
-        MetricCardData(
-            title = "MASTER DISTRIBUTORS",
-            value = "245",
-            trend = "Territory Coverage",
-            isPositive = true,
-            icon = Icons.Default.Business,
-            accentColor = SolarAmber,
-            onClick = onNavigateToDistributors
-        ),
-        MetricCardData(
-            title = "POS RETAILERS DIRECTORY",
-            value = "1,890",
-            trend = "Active Outlets",
-            isPositive = true,
-            icon = Icons.Default.Storefront,
-            accentColor = NeonCyan,
-            onClick = {}
-        ),
-        MetricCardData(
-            title = "PLATFORM REVENUE",
-            value = "$4.2M",
-            trend = "+8.1% MTD",
-            isPositive = true,
-            icon = Icons.Default.MonetizationOn,
-            accentColor = EmeraldGreen,
-            onClick = {}
-        ),
-        MetricCardData(
-            title = "SYSTEM DPC RELEASE",
-            value = "v4.2.1",
-            trend = "STABLE BUILD",
-            isPositive = true,
-            icon = Icons.Default.SystemUpdate,
-            accentColor = SolarAmber,
-            onClick = {}
-        ),
-        MetricCardData(
-            title = "SERVER UPTIME HEALTH",
-            value = "99.8%",
-            trend = "All Nodes Green",
-            isPositive = true,
-            icon = Icons.Default.Dns,
-            accentColor = EmeraldGreen,
-            onClick = {}
-        )
+    val cards = listOf(
+        ExactMetricCard("Protected Devices", "24,731", "↑ 2,150 (8.7%)", true, false, Icons.Default.PhonelinkLock, CardPurple),
+        ExactMetricCard("Online Devices", "18,652", "↑ 1,240 (7.2%)", true, false, Icons.Default.Group, CardGreen),
+        ExactMetricCard("Locked Devices", "312", "↓ 18 (5.4%)", false, true, Icons.Default.Lock, CardRed),
+        ExactMetricCard("Overdue Payments", "₹ 48,75,230", "↑ 12.6%", true, false, Icons.Default.Schedule, CardAmber),
+        ExactMetricCard("Active Retailers", "842", "↑ 68 (8.8%)", true, false, Icons.Default.Storefront, CardAmber),
+        ExactMetricCard("Active Distributors", "28", "↑ 6 (21.7%)", true, false, Icons.Default.Business, CardGreen),
+        ExactMetricCard("Recovery Cases", "126", "↑ 14 (12.5%)", true, false, Icons.Default.Shield, CardAmber),
+        ExactMetricCard("Commands Today", "1,842", "↑ 231 (14.3%)", true, false, Icons.Default.TrendingUp, CardBlue)
     )
 
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(ObsidianBackground)
-            .padding(16.dp),
-        verticalArrangement = Arrangement.spacedBy(14.dp)
+            .background(Color(0xFF0B0F19))
+            .padding(horizontal = 16.dp, vertical = 12.dp)
     ) {
-        // Status Header (Original Blueprint Style)
-        Row(
-            modifier = Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.SpaceBetween,
-            verticalAlignment = Alignment.CenterVertically
+        LazyColumn(
+            verticalArrangement = Arrangement.spacedBy(12.dp),
+            modifier = Modifier.fillMaxSize()
         ) {
-            Row(
-                verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.spacedBy(10.dp)
-            ) {
-                Box(
-                    modifier = Modifier
-                        .size(44.dp)
-                        .clip(CircleShape)
-                        .background(SolarAmber.copy(alpha = 0.15f)),
-                    contentAlignment = Alignment.Center
-                ) {
-                    Text("SA", fontSize = 18.sp, fontWeight = FontWeight.Black, color = SolarAmber)
-                }
-                Column {
-                    Text(
-                        text = "UNIGUARD PRO MASTER",
-                        fontSize = 10.sp,
-                        fontWeight = FontWeight.ExtraBold,
-                        color = NeonCyan,
-                        letterSpacing = 1.5.sp
-                    )
-                    Text(
-                        text = "Mission Control Center",
-                        fontSize = 18.sp,
-                        fontWeight = FontWeight.Black,
-                        color = Color.White
-                    )
-                }
-            }
-
-            Surface(
-                color = EmeraldGreen.copy(alpha = 0.15f),
-                shape = RoundedCornerShape(12.dp),
-                border = androidx.compose.foundation.BorderStroke(1.dp, EmeraldGreen.copy(alpha = 0.4f))
-            ) {
+            // 1. Header Bar (1:1 with 01_Dashboard_Overview.jpg)
+            item {
                 Row(
-                    modifier = Modifier.padding(horizontal = 10.dp, vertical = 6.dp),
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.spacedBy(6.dp)
-                ) {
-                    Box(
-                        modifier = Modifier
-                            .size(8.dp)
-                            .clip(CircleShape)
-                            .background(EmeraldGreen)
-                    )
-                    Text(
-                        text = "NODE 01 ONLINE",
-                        fontSize = 10.sp,
-                        fontWeight = FontWeight.ExtraBold,
-                        color = EmeraldGreen
-                    )
-                }
-            }
-        }
-
-        // Hero Command Telemetry Banner
-        Surface(
-            modifier = Modifier.fillMaxWidth(),
-            color = ObsidianCard,
-            shape = RoundedCornerShape(16.dp),
-            border = androidx.compose.foundation.BorderStroke(1.dp, ObsidianCardBorder)
-        ) {
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(16.dp),
-                horizontalArrangement = Arrangement.SpaceBetween,
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
-                    Text("SOVEREIGN PLATFORM METRICS", fontSize = 11.sp, fontWeight = FontWeight.Bold, color = SolarAmber)
-                    Text("Real-Time Fleet & Revenue Telemetry", fontSize = 14.sp, fontWeight = FontWeight.ExtraBold, color = Color.White)
-                    Text("Last synced: 2 seconds ago • Cryptographically Signed", fontSize = 10.sp, color = TextSecondary)
-                }
-
-                Button(
-                    onClick = onNavigateToMint,
-                    colors = ButtonDefaults.buttonColors(containerColor = SolarAmber, contentColor = ObsidianBackground),
-                    shape = RoundedCornerShape(12.dp),
-                    contentPadding = PaddingValues(horizontal = 12.dp, vertical = 6.dp)
-                ) {
-                    Icon(Icons.Default.VpnKey, contentDescription = null, modifier = Modifier.size(16.dp))
-                    Spacer(modifier = Modifier.width(4.dp))
-                    Text("Mint Keys", fontSize = 11.sp, fontWeight = FontWeight.Bold)
-                }
-            }
-        }
-
-        // 2x4 Metric Cards Grid (Matching Screen 01 Blueprint Exactly)
-        LazyVerticalGrid(
-            columns = GridCells.Fixed(2),
-            horizontalArrangement = Arrangement.spacedBy(10.dp),
-            verticalArrangement = Arrangement.spacedBy(10.dp),
-            modifier = Modifier.weight(1f)
-        ) {
-            items(metricCards) { card ->
-                Surface(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .clickable { card.onClick() },
-                    color = ObsidianCard,
-                    shape = RoundedCornerShape(16.dp),
-                    border = androidx.compose.foundation.BorderStroke(1.dp, card.accentColor.copy(alpha = 0.3f))
+                        .padding(vertical = 4.dp),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically
                 ) {
-                    Column(
-                        modifier = Modifier.padding(14.dp),
-                        verticalArrangement = Arrangement.spacedBy(8.dp)
+                    IconButton(onClick = {}) {
+                        Icon(Icons.Default.Menu, contentDescription = null, tint = Color.White, modifier = Modifier.size(24.dp))
+                    }
+
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.spacedBy(8.dp)
                     ) {
-                        Row(
-                            modifier = Modifier.fillMaxWidth(),
-                            horizontalArrangement = Arrangement.SpaceBetween,
-                            verticalAlignment = Alignment.CenterVertically
+                        Box(
+                            modifier = Modifier
+                                .size(32.dp)
+                                .clip(CircleShape)
+                                .background(CardPurple.copy(alpha = 0.2f)),
+                            contentAlignment = Alignment.Center
                         ) {
-                            Box(
-                                modifier = Modifier
-                                    .size(34.dp)
-                                    .clip(CircleShape)
-                                    .background(card.accentColor.copy(alpha = 0.15f)),
-                                contentAlignment = Alignment.Center
-                            ) {
-                                Icon(
-                                    imageVector = card.icon,
-                                    contentDescription = null,
-                                    tint = card.accentColor,
-                                    modifier = Modifier.size(18.dp)
-                                )
-                            }
-
-                            Surface(
-                                color = if (card.isPositive) EmeraldGreen.copy(alpha = 0.15f) else CrimsonRed.copy(alpha = 0.15f),
-                                shape = RoundedCornerShape(6.dp)
-                            ) {
-                                Text(
-                                    text = card.trend,
-                                    fontSize = 9.sp,
-                                    fontWeight = FontWeight.Bold,
-                                    color = if (card.isPositive) EmeraldGreen else CrimsonRed,
-                                    modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp)
-                                )
-                            }
+                            Icon(Icons.Default.Shield, contentDescription = null, tint = CardPurple, modifier = Modifier.size(20.dp))
                         }
+                        Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                            Text("UniGuard", fontSize = 16.sp, fontWeight = FontWeight.Black, color = Color.White)
+                            Text("Super Admin", fontSize = 10.sp, fontWeight = FontWeight.Bold, color = CardPurple)
+                        }
+                    }
 
-                        Text(
-                            text = card.value,
-                            fontSize = 22.sp,
-                            fontWeight = FontWeight.Black,
-                            color = Color.White
-                        )
-
-                        Text(
-                            text = card.title,
-                            fontSize = 9.sp,
-                            fontWeight = FontWeight.Bold,
-                            color = TextSecondary,
-                            letterSpacing = 0.5.sp
-                        )
+                    Box {
+                        IconButton(onClick = {}) {
+                            Icon(Icons.Default.Notifications, contentDescription = null, tint = Color.White, modifier = Modifier.size(24.dp))
+                        }
+                        Surface(
+                            modifier = Modifier.align(Alignment.TopEnd),
+                            color = CardRed,
+                            shape = CircleShape
+                        ) {
+                            Text(
+                                text = "13",
+                                fontSize = 9.sp,
+                                fontWeight = FontWeight.Bold,
+                                color = Color.White,
+                                modifier = Modifier.padding(horizontal = 4.dp, vertical = 1.dp)
+                            )
+                        }
                     }
                 }
             }
+
+            // 2. Section Header: "Live Status"
+            item {
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Text("Live Status", fontSize = 18.sp, fontWeight = FontWeight.Bold, color = Color.White)
+
+                    Surface(
+                        color = Color(0xFF13231B),
+                        shape = RoundedCornerShape(20.dp),
+                        border = androidx.compose.foundation.BorderStroke(1.dp, CardGreen.copy(alpha = 0.4f))
+                    ) {
+                        Row(
+                            modifier = Modifier.padding(horizontal = 10.dp, vertical = 4.dp),
+                            verticalAlignment = Alignment.CenterVertically,
+                            horizontalArrangement = Arrangement.spacedBy(6.dp)
+                        ) {
+                            Box(
+                                modifier = Modifier
+                                    .size(6.dp)
+                                    .clip(CircleShape)
+                                    .background(CardGreen)
+                            )
+                            Text("Live Status", fontSize = 10.sp, fontWeight = FontWeight.Bold, color = CardGreen)
+                        }
+                    }
+                }
+            }
+
+            // 3. 2x4 Metric Cards Grid (1:1 with 01_Dashboard_Overview.jpg)
+            items(cards.chunked(2).size) { rowIndex ->
+                val rowCards = cards.chunked(2)[rowIndex]
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.spacedBy(10.dp)
+                ) {
+                    rowCards.forEach { card ->
+                        Surface(
+                            modifier = Modifier
+                                .weight(1f)
+                                .height(108.dp),
+                            color = Color(0xFF131A29),
+                            shape = RoundedCornerShape(14.dp),
+                            border = androidx.compose.foundation.BorderStroke(1.dp, Color.White.copy(alpha = 0.05f))
+                        ) {
+                            Column(
+                                modifier = Modifier
+                                    .fillMaxSize()
+                                    .padding(12.dp),
+                                verticalArrangement = Arrangement.SpaceBetween
+                            ) {
+                                Row(
+                                    verticalAlignment = Alignment.CenterVertically,
+                                    horizontalArrangement = Arrangement.spacedBy(8.dp)
+                                ) {
+                                    Box(
+                                        modifier = Modifier
+                                            .size(28.dp)
+                                            .clip(RoundedCornerShape(8.dp))
+                                            .background(card.iconBgColor.copy(alpha = 0.2f)),
+                                        contentAlignment = Alignment.Center
+                                    ) {
+                                        Icon(card.icon, contentDescription = null, tint = card.iconBgColor, modifier = Modifier.size(16.dp))
+                                    }
+                                    Text(card.title, fontSize = 11.sp, fontWeight = FontWeight.Medium, color = Color(0xFF9CA3AF))
+                                }
+
+                                Text(card.value, fontSize = 18.sp, fontWeight = FontWeight.Black, color = Color.White)
+
+                                Text(
+                                    text = card.trend,
+                                    fontSize = 10.sp,
+                                    fontWeight = FontWeight.Bold,
+                                    color = if (card.isRedTrend) CardRed else CardGreen
+                                )
+                            }
+                        }
+                    }
+                }
+            }
+
+            // 4. Device Status Donut Chart (1:1 with 01_Dashboard_Overview.jpg)
+            item {
+                Spacer(modifier = Modifier.height(4.dp))
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Text("Device Status", fontSize = 16.sp, fontWeight = FontWeight.Bold, color = Color.White)
+                    Text("View All", fontSize = 12.sp, fontWeight = FontWeight.Bold, color = CardPurple)
+                }
+            }
+
+            item {
+                Surface(
+                    modifier = Modifier.fillMaxWidth(),
+                    color = Color(0xFF131A29),
+                    shape = RoundedCornerShape(16.dp),
+                    border = androidx.compose.foundation.BorderStroke(1.dp, Color.White.copy(alpha = 0.05f))
+                ) {
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(16.dp),
+                        horizontalArrangement = Arrangement.SpaceBetween,
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        // Canvas Donut Ring Chart
+                        Box(
+                            modifier = Modifier.size(120.dp),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            Canvas(modifier = Modifier.size(110.dp)) {
+                                val strokeWidth = 14.dp.toPx()
+                                // Online (75.4%)
+                                drawArc(
+                                    color = CardGreen,
+                                    startAngle = -90f,
+                                    sweepAngle = 271.4f,
+                                    useCenter = false,
+                                    style = Stroke(width = strokeWidth, cap = StrokeCap.Round)
+                                )
+                                // Offline (17.1%)
+                                drawArc(
+                                    color = CardPurple,
+                                    startAngle = 181.4f,
+                                    sweepAngle = 61.5f,
+                                    useCenter = false,
+                                    style = Stroke(width = strokeWidth, cap = StrokeCap.Round)
+                                )
+                                // Locked (1.3%)
+                                drawArc(
+                                    color = CardRed,
+                                    startAngle = 242.9f,
+                                    sweepAngle = 4.68f,
+                                    useCenter = false,
+                                    style = Stroke(width = strokeWidth, cap = StrokeCap.Round)
+                                )
+                                // Tampered (0.8%)
+                                drawArc(
+                                    color = CardAmber,
+                                    startAngle = 247.58f,
+                                    sweepAngle = 2.88f,
+                                    useCenter = false,
+                                    style = Stroke(width = strokeWidth, cap = StrokeCap.Round)
+                                )
+                                // Others (5.4%)
+                                drawArc(
+                                    color = ChartGrey,
+                                    startAngle = 250.46f,
+                                    sweepAngle = 19.44f,
+                                    useCenter = false,
+                                    style = Stroke(width = strokeWidth, cap = StrokeCap.Round)
+                                )
+                            }
+                            Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                                Text("24,731", fontSize = 14.sp, fontWeight = FontWeight.Black, color = Color.White)
+                                Text("Total", fontSize = 9.sp, color = Color(0xFF9CA3AF))
+                            }
+                        }
+
+                        // Donut Legend Breakdown
+                        Column(
+                            verticalArrangement = Arrangement.spacedBy(6.dp),
+                            modifier = Modifier.padding(start = 12.dp)
+                        ) {
+                            LegendRow("Online", "18,652 (75.4%)", CardGreen)
+                            LegendRow("Offline", "4,231 (17.1%)", CardPurple)
+                            LegendRow("Locked", "313 (1.3%)", CardRed)
+                            LegendRow("Tampered", "196 (0.8%)", CardAmber)
+                            LegendRow("Others", "1,340 (5.4%)", ChartGrey)
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@Composable
+fun LegendRow(label: String, detail: String, color: Color) {
+    Row(
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.spacedBy(8.dp)
+    ) {
+        Box(
+            modifier = Modifier
+                .size(8.dp)
+                .clip(CircleShape)
+                .background(color)
+        )
+        Column {
+            Text(label, fontSize = 10.sp, fontWeight = FontWeight.Bold, color = Color.White)
+            Text(detail, fontSize = 9.sp, color = Color(0xFF9CA3AF))
         }
     }
 }
