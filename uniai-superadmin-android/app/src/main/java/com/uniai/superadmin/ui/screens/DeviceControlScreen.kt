@@ -1,14 +1,19 @@
 package com.uniai.superadmin.ui.screens
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -16,214 +21,261 @@ import com.uniai.superadmin.ui.theme.*
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun DeviceControlScreen() {
-    var imeiQuery by remember { mutableStateOf("") }
-    var globalLock by remember { mutableStateOf(false) }
-    var cameraBlock by remember { mutableStateOf(false) }
-    var usbBlock by remember { mutableStateOf(false) }
-    var frpLock by remember { mutableStateOf(false) }
-    var recoveryCodeVisible by remember { mutableStateOf(false) }
-    var showTotpDialog by remember { mutableStateOf(false) }
-    var pendingAction by remember { mutableStateOf("") }
+fun DeviceControlScreen(
+    targetImei: String = "864209041234567"
+) {
+    var imeiInput by remember { mutableStateOf(targetImei) }
+    var selectedAction by remember { mutableStateOf<String?>(null) }
+    var showConfirmDialog by remember { mutableStateOf(false) }
+    var actionStatusMessage by remember { mutableStateOf<String?>(null) }
 
-    Box(
+    Column(
         modifier = Modifier
             .fillMaxSize()
             .background(ObsidianBackground)
-            .padding(16.dp)
+            .padding(16.dp),
+        verticalArrangement = Arrangement.spacedBy(14.dp)
     ) {
-        LazyColumn(
-            verticalArrangement = Arrangement.spacedBy(16.dp),
-            modifier = Modifier.fillMaxSize()
+        // 1. Header
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically
         ) {
-            item {
+            Column {
                 Text(
-                    text = "DEVICE CONTROL CENTER",
-                    color = NeonCyan,
-                    fontSize = 18.sp,
-                    fontWeight = FontWeight.Bold,
+                    text = "HARDWARE COMMAND TOWER",
+                    fontSize = 11.sp,
+                    fontWeight = FontWeight.ExtraBold,
+                    color = CrimsonRed,
                     letterSpacing = 1.5.sp
                 )
-            }
-
-            // IMEI Search
-            item {
-                OutlinedTextField(
-                    value = imeiQuery,
-                    onValueChange = { imeiQuery = it },
-                    label = { Text("Enter Device IMEI") },
-                    colors = OutlinedTextFieldDefaults.colors(
-                        focusedBorderColor = NeonCyan,
-                        unfocusedBorderColor = ObsidianBorder,
-                        focusedTextColor = Color.White,
-                        unfocusedTextColor = Color.White
-                    ),
-                    modifier = Modifier.fillMaxWidth(),
-                    shape = RoundedCornerShape(10.dp)
+                Text(
+                    text = "Lock & Command Center",
+                    fontSize = 20.sp,
+                    fontWeight = FontWeight.Black,
+                    color = Color.White
                 )
             }
-
-            // Identity Card
-            item {
-                Surface(
-                    color = ObsidianCard,
-                    shape = RoundedCornerShape(14.dp),
-                    border = androidx.compose.foundation.BorderStroke(1.dp, ObsidianBorder),
-                    modifier = Modifier.fillMaxWidth()
-                ) {
-                    Column(modifier = Modifier.padding(16.dp)) {
-                        Text("DEVICE IDENTITY", color = TextSecondary, fontSize = 12.sp, fontWeight = FontWeight.Bold)
-                        Spacer(modifier = Modifier.height(8.dp))
-                        Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
-                            Text("Owner:", color = TextSecondary, fontSize = 14.sp)
-                            Text("Ramesh Kumar", color = Color.White, fontSize = 14.sp, fontWeight = FontWeight.Bold)
-                        }
-                        Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
-                            Text("Retailer:", color = TextSecondary, fontSize = 14.sp)
-                            Text("Apex Mobile Hub", color = Color.White, fontSize = 14.sp, fontWeight = FontWeight.Bold)
-                        }
-                        Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
-                            Text("Model:", color = TextSecondary, fontSize = 14.sp)
-                            Text("Samsung Galaxy M34", color = Color.White, fontSize = 14.sp, fontWeight = FontWeight.Bold)
-                        }
-                        Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
-                            Text("Last Sync:", color = TextSecondary, fontSize = 14.sp)
-                            Text("2 mins ago", color = EmeraldGreen, fontSize = 14.sp, fontWeight = FontWeight.Bold)
-                        }
-                    }
-                }
+            Surface(
+                color = EmeraldGreen.copy(alpha = 0.15f),
+                shape = RoundedCornerShape(12.dp),
+                border = androidx.compose.foundation.BorderStroke(1.dp, EmeraldGreen.copy(alpha = 0.4f))
+            ) {
+                Text(
+                    text = "FCM ACTIVE",
+                    fontSize = 10.sp,
+                    fontWeight = FontWeight.Bold,
+                    color = EmeraldGreen,
+                    modifier = Modifier.padding(horizontal = 10.dp, vertical = 4.dp)
+                )
             }
+        }
 
-            // Toggles
-            item {
-                Surface(
-                    color = ObsidianCard,
-                    shape = RoundedCornerShape(14.dp),
-                    border = androidx.compose.foundation.BorderStroke(1.dp, ObsidianBorder),
-                    modifier = Modifier.fillMaxWidth()
+        // 2. Target Device Dossier Card
+        Surface(
+            modifier = Modifier.fillMaxWidth(),
+            color = ObsidianCard,
+            shape = RoundedCornerShape(16.dp),
+            border = androidx.compose.foundation.BorderStroke(1.dp, SolarAmber.copy(alpha = 0.4f))
+        ) {
+            Column(modifier = Modifier.padding(14.dp)) {
+                Text("TARGET DEVICE DOSSIER", fontSize = 10.sp, fontWeight = FontWeight.Bold, color = SolarAmber)
+                Spacer(modifier = Modifier.height(6.dp))
+                OutlinedTextField(
+                    value = imeiInput,
+                    onValueChange = { imeiInput = it },
+                    label = { Text("Target Device IMEI", color = TextSecondary) },
+                    singleLine = true,
+                    modifier = Modifier.fillMaxWidth(),
+                    colors = OutlinedTextFieldDefaults.colors(
+                        focusedBorderColor = NeonCyan,
+                        unfocusedBorderColor = ObsidianCardBorder,
+                        focusedTextColor = Color.White,
+                        unfocusedTextColor = Color.White
+                    )
+                )
+                Spacer(modifier = Modifier.height(8.dp))
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceBetween
                 ) {
-                    Column(modifier = Modifier.padding(16.dp)) {
-                        Text("POLICY CONTROLS", color = TextSecondary, fontSize = 12.sp, fontWeight = FontWeight.Bold)
-                        Spacer(modifier = Modifier.height(8.dp))
-                        Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween, verticalAlignment = Alignment.CenterVertically) {
-                            Text("Global Lock", color = Color.White)
-                            Switch(checked = globalLock, onCheckedChange = { globalLock = it })
-                        }
-                        Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween, verticalAlignment = Alignment.CenterVertically) {
-                            Text("Camera Block", color = Color.White)
-                            Switch(checked = cameraBlock, onCheckedChange = { cameraBlock = it })
-                        }
-                        Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween, verticalAlignment = Alignment.CenterVertically) {
-                            Text("USB Debugging Block", color = Color.White)
-                            Switch(checked = usbBlock, onCheckedChange = { usbBlock = it })
-                        }
-                        Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween, verticalAlignment = Alignment.CenterVertically) {
-                            Text("Factory Reset / FRP Lock", color = Color.White)
-                            Switch(checked = frpLock, onCheckedChange = { frpLock = it })
-                        }
-                    }
-                }
-            }
-
-            // Recovery & Actions
-            item {
-                Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
-                    Button(
-                        onClick = { recoveryCodeVisible = !recoveryCodeVisible },
-                        modifier = Modifier.fillMaxWidth(),
-                        colors = ButtonDefaults.buttonColors(containerColor = NeonCyan)
-                    ) {
-                        Text(if (recoveryCodeVisible) "PIN: 847291" else "Generate Recovery Code", color = ObsidianBackground)
-                    }
-
-                    Button(
-                        onClick = { 
-                            pendingAction = "Send Alert"
-                            showTotpDialog = true 
-                        },
-                        modifier = Modifier.fillMaxWidth(),
-                        colors = ButtonDefaults.buttonColors(containerColor = AmberWarning)
-                    ) {
-                        Text("Send Alert", color = ObsidianBackground)
-                    }
-
-                    Button(
-                        onClick = { 
-                            pendingAction = "Remote Wipe Data"
-                            showTotpDialog = true 
-                        },
-                        modifier = Modifier.fillMaxWidth(),
-                        colors = ButtonDefaults.buttonColors(containerColor = CrimsonRed)
-                    ) {
-                        Text("Remote Wipe Data", color = Color.White)
-                    }
+                    Text("Customer: Ramesh Kumar", fontSize = 11.sp, color = TextPrimary)
+                    Text("Battery: 84% • Online", fontSize = 11.sp, color = EmeraldGreen, fontWeight = FontWeight.Bold)
                 }
             }
         }
 
-        if (showTotpDialog) {
-            TotpDialog(
-                action = pendingAction,
-                onDismiss = { showTotpDialog = false },
-                onConfirm = { code, reason ->
-                    // Perform action
-                    showTotpDialog = false
-                }
-            )
+        actionStatusMessage?.let { msg ->
+            Surface(
+                color = SolarAmber.copy(alpha = 0.15f),
+                shape = RoundedCornerShape(12.dp),
+                border = androidx.compose.foundation.BorderStroke(1.dp, SolarAmber)
+            ) {
+                Text(
+                    text = msg,
+                    fontSize = 12.sp,
+                    color = SolarAmber,
+                    fontWeight = FontWeight.Bold,
+                    modifier = Modifier.padding(12.dp)
+                )
+            }
         }
+
+        // 3. Command Grid Tiles (10 Action Modules)
+        LazyVerticalGrid(
+            columns = GridCells.Fixed(2),
+            horizontalArrangement = Arrangement.spacedBy(10.dp),
+            verticalArrangement = Arrangement.spacedBy(10.dp),
+            modifier = Modifier.weight(1f)
+        ) {
+            item {
+                CommandActionTile(
+                    title = "Lock Device",
+                    subtitle = "Trigger DPC Kiosk Paralyze",
+                    icon = Icons.Default.Lock,
+                    color = CrimsonRed,
+                    onClick = { selectedAction = "LOCK_DEVICE"; showConfirmDialog = true }
+                )
+            }
+            item {
+                CommandActionTile(
+                    title = "Unlock Device",
+                    subtitle = "Clear DPC Restrictions",
+                    icon = Icons.Default.LockOpen,
+                    color = EmeraldGreen,
+                    onClick = { selectedAction = "UNLOCK_DEVICE"; showConfirmDialog = true }
+                )
+            }
+            item {
+                CommandActionTile(
+                    title = "Temp Unlock",
+                    subtitle = "24h EMI Grace Period",
+                    icon = Icons.Default.Timer,
+                    color = SolarAmber,
+                    onClick = { selectedAction = "TEMP_UNLOCK"; showConfirmDialog = true }
+                )
+            }
+            item {
+                CommandActionTile(
+                    title = "Send Message",
+                    subtitle = "Custom Screen Banner",
+                    icon = Icons.Default.Message,
+                    color = NeonCyan,
+                    onClick = { actionStatusMessage = "Message Payload Queued for IMEI $imeiInput" }
+                )
+            }
+            item {
+                CommandActionTile(
+                    title = "Set Wallpaper",
+                    subtitle = "Remote Payment Banner",
+                    icon = Icons.Default.Image,
+                    color = Color.White,
+                    onClick = { actionStatusMessage = "Wallpaper Payload Sent to IMEI $imeiInput" }
+                )
+            }
+            item {
+                CommandActionTile(
+                    title = "Play Siren Alert",
+                    subtitle = "Override Silent Mode",
+                    icon = Icons.Default.VolumeUp,
+                    color = SolarAmber,
+                    onClick = { actionStatusMessage = "Siren Command Fired to IMEI $imeiInput" }
+                )
+            }
+            item {
+                CommandActionTile(
+                    title = "Restart Device",
+                    subtitle = "Soft Remote Reboot",
+                    icon = Icons.Default.RestartAlt,
+                    color = NeonCyan,
+                    onClick = { selectedAction = "RESTART"; showConfirmDialog = true }
+                )
+            }
+            item {
+                CommandActionTile(
+                    title = "Wipe Data",
+                    subtitle = "Factory Reset & Wipe",
+                    icon = Icons.Default.DeleteForever,
+                    color = CrimsonRed,
+                    onClick = { selectedAction = "WIPE_DATA"; showConfirmDialog = true }
+                )
+            }
+            item {
+                CommandActionTile(
+                    title = "Force Sync",
+                    subtitle = "Instant Heartbeat Ping",
+                    icon = Icons.Default.Sync,
+                    color = EmeraldGreen,
+                    onClick = { actionStatusMessage = "FCM Sync Ping Executed for IMEI $imeiInput" }
+                )
+            }
+            item {
+                CommandActionTile(
+                    title = "Block USB",
+                    subtitle = "Paralyze ADB/OTG Port",
+                    icon = Icons.Default.Usb,
+                    color = SolarAmber,
+                    onClick = { actionStatusMessage = "USB Port Block Payload Active" }
+                )
+            }
+        }
+    }
+
+    if (showConfirmDialog) {
+        AlertDialog(
+            onDismissRequest = { showConfirmDialog = false },
+            title = { Text("Confirm Action: $selectedAction", color = CrimsonRed, fontWeight = FontWeight.Bold) },
+            text = { Text("Are you sure you want to execute $selectedAction on IMEI $imeiInput? This action will be signed and logged.", color = Color.White) },
+            confirmButton = {
+                Button(
+                    onClick = {
+                        showConfirmDialog = false
+                        actionStatusMessage = "SUCCESS: Payload [$selectedAction] Executed for IMEI $imeiInput"
+                    },
+                    colors = ButtonDefaults.buttonColors(containerColor = CrimsonRed)
+                ) {
+                    Text("EXECUTE PAYLOAD", color = Color.White, fontWeight = FontWeight.Bold)
+                }
+            },
+            dismissButton = {
+                TextButton(onClick = { showConfirmDialog = false }) {
+                    Text("Cancel", color = TextSecondary)
+                }
+            },
+            containerColor = ObsidianCard
+        )
     }
 }
 
 @Composable
-fun TotpDialog(action: String, onDismiss: () -> Unit, onConfirm: (String, String) -> Unit) {
-    var totpCode by remember { mutableStateOf("") }
-    var reason by remember { mutableStateOf("") }
-
-    AlertDialog(
-        onDismissRequest = onDismiss,
-        containerColor = ObsidianCard,
-        titleContentColor = Color.White,
-        textContentColor = Color.White,
-        title = { Text("MFA Required for $action") },
-        text = {
-            Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
-                OutlinedTextField(
-                    value = totpCode,
-                    onValueChange = { totpCode = it },
-                    label = { Text("Enter TOTP Code") },
-                    colors = OutlinedTextFieldDefaults.colors(
-                        focusedBorderColor = NeonCyan,
-                        unfocusedBorderColor = ObsidianBorder,
-                        focusedTextColor = Color.White,
-                        unfocusedTextColor = Color.White
-                    ),
-                    modifier = Modifier.fillMaxWidth(),
-                    shape = RoundedCornerShape(10.dp)
-                )
-                OutlinedTextField(
-                    value = reason,
-                    onValueChange = { reason = it },
-                    label = { Text("Reason for Action") },
-                    colors = OutlinedTextFieldDefaults.colors(
-                        focusedBorderColor = NeonCyan,
-                        unfocusedBorderColor = ObsidianBorder,
-                        focusedTextColor = Color.White,
-                        unfocusedTextColor = Color.White
-                    ),
-                    modifier = Modifier.fillMaxWidth(),
-                    shape = RoundedCornerShape(10.dp)
-                )
-            }
-        },
-        confirmButton = {
-            Button(onClick = { onConfirm(totpCode, reason) }, colors = ButtonDefaults.buttonColors(containerColor = NeonCyan)) {
-                Text("Confirm", color = ObsidianBackground)
-            }
-        },
-        dismissButton = {
-            TextButton(onClick = onDismiss) {
-                Text("Cancel", color = TextSecondary)
+fun CommandActionTile(
+    title: String,
+    subtitle: String,
+    icon: ImageVector,
+    color: Color,
+    onClick: () -> Unit
+) {
+    Surface(
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(100.dp)
+            .clickable { onClick() },
+        color = ObsidianCard,
+        shape = RoundedCornerShape(16.dp),
+        border = androidx.compose.foundation.BorderStroke(1.dp, color.copy(alpha = 0.3f))
+    ) {
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(12.dp),
+            verticalArrangement = Arrangement.SpaceBetween
+        ) {
+            Icon(icon, contentDescription = null, tint = color, modifier = Modifier.size(22.dp))
+            Column {
+                Text(title, fontSize = 13.sp, fontWeight = FontWeight.Bold, color = Color.White)
+                Text(subtitle, fontSize = 9.sp, color = TextSecondary)
             }
         }
-    )
+    }
 }

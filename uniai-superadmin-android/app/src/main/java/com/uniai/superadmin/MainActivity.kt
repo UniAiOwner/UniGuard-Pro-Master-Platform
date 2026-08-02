@@ -15,11 +15,12 @@ import com.uniai.superadmin.ui.theme.*
 
 enum class SuperAdminTab(val title: String, val icon: String) {
     DASHBOARD("Control", "🏠"),
-    MINT("Kernel", "🔑"),
+    DEVICES("Devices", "📱"),
+    COMMANDS("Lock Cmd", "🔒"),
     DISTRIBUTORS("Distro", "🏢"),
-    FRAUD("AI Fraud", "🛡️"),
-    TENANTS("Tenants", "🏬"),
-    DIAGNOSTICS("System", "⚡")
+    RETAILERS("Retailers", "🏪"),
+    MINT("Kernel", "🔑"),
+    FRAUD("AI Fraud", "🛡️")
 }
 
 class MainActivity : ComponentActivity() {
@@ -61,7 +62,7 @@ class MainActivity : ComponentActivity() {
                                                 Text(
                                                     text = tab.title,
                                                     color = if (isSelected) SolarAmber else TextSecondary,
-                                                    fontSize = 10.sp,
+                                                    fontSize = 9.sp,
                                                     fontWeight = if (isSelected) FontWeight.Bold else FontWeight.Normal
                                                 )
                                             },
@@ -77,13 +78,17 @@ class MainActivity : ComponentActivity() {
                                 when (selectedTab) {
                                     SuperAdminTab.DASHBOARD -> SuperAdminDashboardScreen(
                                         onNavigateToMint = { selectedTab = SuperAdminTab.MINT },
-                                        onNavigateToFraud = { selectedTab = SuperAdminTab.FRAUD }
+                                        onNavigateToFraud = { selectedTab = SuperAdminTab.FRAUD },
+                                        onNavigateToDevices = { selectedTab = SuperAdminTab.DEVICES },
+                                        onNavigateToCommands = { selectedTab = SuperAdminTab.COMMANDS },
+                                        onNavigateToDistributors = { selectedTab = SuperAdminTab.DISTRIBUTORS }
                                     )
-                                    SuperAdminTab.MINT -> LicenseMintingKernelScreen()
+                                    SuperAdminTab.DEVICES -> SuperAdminDeviceOverviewScreen()
+                                    SuperAdminTab.COMMANDS -> DeviceControlScreen()
                                     SuperAdminTab.DISTRIBUTORS -> DistributorManagementScreen()
+                                    SuperAdminTab.RETAILERS -> SuperAdminRetailersOversightScreen()
+                                    SuperAdminTab.MINT -> LicenseMintingKernelScreen()
                                     SuperAdminTab.FRAUD -> AiFraudOverrideScreen()
-                                    SuperAdminTab.TENANTS -> TenantRegistryScreen()
-                                    SuperAdminTab.DIAGNOSTICS -> SystemConfigScreen()
                                 }
                             }
                         }

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.uniai.superadmin.app-mergeDebugResources-36:/values-sv/values-sv.xml",
+            "outputFile": "com.uniai.superadmin.app-mergeDebugResources-38:/values-sv/values-sv.xml",
             "map": [
                 {
                     "source": "/media/uniai/UniAi/## Home/.gradle/caches/9.1.0/transforms/597bc2107ad0e7a6d4d38ce3febcc43b/transformed/core-1.18.0/res/values-sv/values-sv.xml",

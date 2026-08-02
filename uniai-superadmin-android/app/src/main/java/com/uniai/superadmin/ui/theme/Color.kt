@@ -6,6 +6,7 @@ val ObsidianBackground = Color(0xFF0B0E14)
 val ObsidianSurface = Color(0xFF161B22)
 val ObsidianCard = Color(0xFF1C222D)
 val ObsidianBorder = Color(0xFF2E3646)
+val ObsidianCardBorder = Color(0xFF2E3646)
 
 val SolarAmber = Color(0xFFFFB703)
 val CommandGold = Color(0xFFF59E0B)
