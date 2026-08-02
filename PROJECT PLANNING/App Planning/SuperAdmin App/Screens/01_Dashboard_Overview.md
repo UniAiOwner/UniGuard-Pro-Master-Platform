@@ -1,13 +1,21 @@
 # 📱 Screen 01: Dashboard (Overview)
 
-> **Target App Module:**  (UniGuard SuperAdmin Master App)  
-> **UI Specification Location:**   
-> **Screen Number:** Screen 01 of 35  
+> **Target App Module:** `uniai-superadmin-android` (UniGuard SuperAdmin Master App)  
+> **UI Specification Location:** `/PROJECT PLANNING/App Planning/SuperAdmin App/Screens/01_Dashboard_Overview.md`  
+> **Mockup Image:** [`01_Dashboard_Overview.png`](file:///media/uniai/UniAi/PROJECTS_MIGRATED/UniGuard%20Pro/PROJECT%20PLANNING/App%20Planning/SuperAdmin%20App/Screens/01_Dashboard_Overview.png)  
+> **High-Res Zoomed View:** [`01_Dashboard_Overview_HighRes.png`](file:///media/uniai/UniAi/PROJECTS_MIGRATED/UniGuard%20Pro/PROJECT%20PLANNING/App%20Planning/SuperAdmin%20App/Screens/01_Dashboard_Overview_HighRes.png)
+
+---
+
+## 🖼️ Screen 01 — Exact Original UI Mockup
+
+![Screen 01 Dashboard Overview](file:///home/uniai/.gemini/antigravity-cli/brain/be235419-4925-442d-af32-92e3a1cf3b59/01_Dashboard_Overview_HighRes.png)
 
 ---
 
 ## 🎯 1. Purpose & Problem Solved
 Global mission control overview presenting real-time platform telemetry, active fleet metrics, and system status.
+
 
 ---
 
