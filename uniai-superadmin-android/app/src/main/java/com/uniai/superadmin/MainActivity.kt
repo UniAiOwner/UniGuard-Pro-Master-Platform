@@ -39,6 +39,11 @@ enum class SuperAdminTab(val title: String, val icon: String) {
     TIMELINE("Timeline", "🕒"),
     PROFILE("Profile", "👤"),
     CREATE_DISTRO("New Distro", "➕"),
+    ACTIONS("Actions", "⚡"),
+    HISTORY("History", "📜"),
+    ROLES("Roles", "🔑"),
+    MATRIX("Matrix", "⚙️"),
+    TERRITORY("Territory", "🗺️"),
     MINT("Kernel", "🔑")
 }
 
@@ -128,6 +133,11 @@ class MainActivity : ComponentActivity() {
                                     SuperAdminTab.TIMELINE -> SuperAdminTimelineScreen()
                                     SuperAdminTab.PROFILE -> SuperAdminProfileScreen()
                                     SuperAdminTab.CREATE_DISTRO -> SuperAdminCreateDistributorScreen()
+                                    SuperAdminTab.ACTIONS -> SuperAdminRemoteActionsScreen()
+                                    SuperAdminTab.HISTORY -> SuperAdminDeviceHistoryScreen()
+                                    SuperAdminTab.ROLES -> SuperAdminRoleManagementScreen()
+                                    SuperAdminTab.MATRIX -> SuperAdminPermissionMatrixScreen()
+                                    SuperAdminTab.TERRITORY -> SuperAdminTerritoryScreen()
                                     SuperAdminTab.MINT -> LicenseMintingKernelScreen()
                                 }
                             }
