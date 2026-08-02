@@ -44,6 +44,11 @@ enum class SuperAdminTab(val title: String, val icon: String) {
     ROLES("Roles", "🔑"),
     MATRIX("Matrix", "⚙️"),
     TERRITORY("Territory", "🗺️"),
+    BULK_OPS("Bulk Ops", "⚡"),
+    ADV_SEARCH("Search", "🔍"),
+    NOTIF_SETTING("Notif Set", "🔔"),
+    BACKUP("Backup", "💾"),
+    SYS_HEALTH("Sys Health", "🩺"),
     MINT("Kernel", "🔑")
 }
 
@@ -138,6 +143,11 @@ class MainActivity : ComponentActivity() {
                                     SuperAdminTab.ROLES -> SuperAdminRoleManagementScreen()
                                     SuperAdminTab.MATRIX -> SuperAdminPermissionMatrixScreen()
                                     SuperAdminTab.TERRITORY -> SuperAdminTerritoryScreen()
+                                    SuperAdminTab.BULK_OPS -> SuperAdminBulkOperationsScreen()
+                                    SuperAdminTab.ADV_SEARCH -> SuperAdminAdvancedSearchScreen()
+                                    SuperAdminTab.NOTIF_SETTING -> SuperAdminNotificationSettingsScreen()
+                                    SuperAdminTab.BACKUP -> SuperAdminBackupRestoreScreen()
+                                    SuperAdminTab.SYS_HEALTH -> SuperAdminSystemHealthScreen()
                                     SuperAdminTab.MINT -> LicenseMintingKernelScreen()
                                 }
                             }
