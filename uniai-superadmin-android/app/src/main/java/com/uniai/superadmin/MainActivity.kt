@@ -19,8 +19,12 @@ enum class SuperAdminTab(val title: String, val icon: String) {
     COMMANDS("Lock Cmd", "🔒"),
     DISTRIBUTORS("Distro", "🏢"),
     RETAILERS("Retailers", "🏪"),
-    MINT("Kernel", "🔑"),
-    FRAUD("AI Fraud", "🛡️")
+    CUSTOMER("Customer", "👤"),
+    DIAGNOSTICS("Diag", "⚡"),
+    MAP("Live Map", "🌐"),
+    REPORTS("Reports", "📊"),
+    AUDIT("Audit Vault", "🛡️"),
+    MINT("Kernel", "🔑")
 }
 
 class MainActivity : ComponentActivity() {
@@ -62,7 +66,7 @@ class MainActivity : ComponentActivity() {
                                                 Text(
                                                     text = tab.title,
                                                     color = if (isSelected) SolarAmber else TextSecondary,
-                                                    fontSize = 9.sp,
+                                                    fontSize = 8.sp,
                                                     fontWeight = if (isSelected) FontWeight.Bold else FontWeight.Normal
                                                 )
                                             },
@@ -78,17 +82,23 @@ class MainActivity : ComponentActivity() {
                                 when (selectedTab) {
                                     SuperAdminTab.DASHBOARD -> SuperAdminDashboardScreen(
                                         onNavigateToMint = { selectedTab = SuperAdminTab.MINT },
-                                        onNavigateToFraud = { selectedTab = SuperAdminTab.FRAUD },
+                                        onNavigateToFraud = { selectedTab = SuperAdminTab.AUDIT },
                                         onNavigateToDevices = { selectedTab = SuperAdminTab.DEVICES },
                                         onNavigateToCommands = { selectedTab = SuperAdminTab.COMMANDS },
                                         onNavigateToDistributors = { selectedTab = SuperAdminTab.DISTRIBUTORS }
                                     )
-                                    SuperAdminTab.DEVICES -> SuperAdminDeviceOverviewScreen()
+                                    SuperAdminTab.DEVICES -> SuperAdminDeviceOverviewScreen(
+                                        onNavigateToDeviceDetail = { selectedTab = SuperAdminTab.DIAGNOSTICS }
+                                    )
                                     SuperAdminTab.COMMANDS -> DeviceControlScreen()
                                     SuperAdminTab.DISTRIBUTORS -> DistributorManagementScreen()
                                     SuperAdminTab.RETAILERS -> SuperAdminRetailersOversightScreen()
+                                    SuperAdminTab.CUSTOMER -> SuperAdminCustomerDetailsScreen()
+                                    SuperAdminTab.DIAGNOSTICS -> SuperAdminDeviceDiagnosticsScreen()
+                                    SuperAdminTab.MAP -> SuperAdminLiveMapScreen()
+                                    SuperAdminTab.REPORTS -> SuperAdminReportsAnalyticsScreen()
+                                    SuperAdminTab.AUDIT -> AuditVaultScreen()
                                     SuperAdminTab.MINT -> LicenseMintingKernelScreen()
-                                    SuperAdminTab.FRAUD -> AiFraudOverrideScreen()
                                 }
                             }
                         }
