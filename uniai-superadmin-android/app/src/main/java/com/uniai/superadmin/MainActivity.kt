@@ -29,6 +29,11 @@ enum class SuperAdminTab(val title: String, val icon: String) {
     PAYMENTS("Payments", "💳"),
     RECOVERY("Recovery", "🚨"),
     POLICY("Policy", "📜"),
+    BROADCAST("Broadcast", "📢"),
+    GEOFENCE("Geofence", "📍"),
+    FIRMWARE("Firmware", "📲"),
+    SIM_MONITOR("SIM Alert", "📶"),
+    TAMPER("Tamper", "🔍"),
     MINT("Kernel", "🔑")
 }
 
@@ -108,6 +113,11 @@ class MainActivity : ComponentActivity() {
                                     SuperAdminTab.PAYMENTS -> SuperAdminPaymentsScreen()
                                     SuperAdminTab.RECOVERY -> SuperAdminRecoveryScreen()
                                     SuperAdminTab.POLICY -> SuperAdminPolicyScreen()
+                                    SuperAdminTab.BROADCAST -> SuperAdminBroadcastScreen()
+                                    SuperAdminTab.GEOFENCE -> SuperAdminGeofenceScreen()
+                                    SuperAdminTab.FIRMWARE -> SuperAdminFirmwareScreen()
+                                    SuperAdminTab.SIM_MONITOR -> SuperAdminSimMonitoringScreen()
+                                    SuperAdminTab.TAMPER -> SuperAdminSecurityEventsScreen()
                                     SuperAdminTab.MINT -> LicenseMintingKernelScreen()
                                 }
                             }
