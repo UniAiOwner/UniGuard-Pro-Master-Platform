@@ -34,6 +34,11 @@ enum class SuperAdminTab(val title: String, val icon: String) {
     FIRMWARE("Firmware", "📲"),
     SIM_MONITOR("SIM Alert", "📶"),
     TAMPER("Tamper", "🔍"),
+    NOTIFICATIONS("Alerts", "🔔"),
+    INSIGHTS("Insights", "📈"),
+    TIMELINE("Timeline", "🕒"),
+    PROFILE("Profile", "👤"),
+    CREATE_DISTRO("New Distro", "➕"),
     MINT("Kernel", "🔑")
 }
 
@@ -118,6 +123,11 @@ class MainActivity : ComponentActivity() {
                                     SuperAdminTab.FIRMWARE -> SuperAdminFirmwareScreen()
                                     SuperAdminTab.SIM_MONITOR -> SuperAdminSimMonitoringScreen()
                                     SuperAdminTab.TAMPER -> SuperAdminSecurityEventsScreen()
+                                    SuperAdminTab.NOTIFICATIONS -> SuperAdminNotificationsScreen()
+                                    SuperAdminTab.INSIGHTS -> SuperAdminInsightsScreen()
+                                    SuperAdminTab.TIMELINE -> SuperAdminTimelineScreen()
+                                    SuperAdminTab.PROFILE -> SuperAdminProfileScreen()
+                                    SuperAdminTab.CREATE_DISTRO -> SuperAdminCreateDistributorScreen()
                                     SuperAdminTab.MINT -> LicenseMintingKernelScreen()
                                 }
                             }
