@@ -24,6 +24,11 @@ enum class SuperAdminTab(val title: String, val icon: String) {
     MAP("Live Map", "🌐"),
     REPORTS("Reports", "📊"),
     AUDIT("Audit Vault", "🛡️"),
+    THREATS("Threats", "⚠️"),
+    CONFIG("Settings", "⚙️"),
+    PAYMENTS("Payments", "💳"),
+    RECOVERY("Recovery", "🚨"),
+    POLICY("Policy", "📜"),
     MINT("Kernel", "🔑")
 }
 
@@ -82,7 +87,7 @@ class MainActivity : ComponentActivity() {
                                 when (selectedTab) {
                                     SuperAdminTab.DASHBOARD -> SuperAdminDashboardScreen(
                                         onNavigateToMint = { selectedTab = SuperAdminTab.MINT },
-                                        onNavigateToFraud = { selectedTab = SuperAdminTab.AUDIT },
+                                        onNavigateToFraud = { selectedTab = SuperAdminTab.THREATS },
                                         onNavigateToDevices = { selectedTab = SuperAdminTab.DEVICES },
                                         onNavigateToCommands = { selectedTab = SuperAdminTab.COMMANDS },
                                         onNavigateToDistributors = { selectedTab = SuperAdminTab.DISTRIBUTORS }
@@ -98,6 +103,11 @@ class MainActivity : ComponentActivity() {
                                     SuperAdminTab.MAP -> SuperAdminLiveMapScreen()
                                     SuperAdminTab.REPORTS -> SuperAdminReportsAnalyticsScreen()
                                     SuperAdminTab.AUDIT -> AuditVaultScreen()
+                                    SuperAdminTab.THREATS -> AiFraudOverrideScreen()
+                                    SuperAdminTab.CONFIG -> SystemConfigScreen()
+                                    SuperAdminTab.PAYMENTS -> SuperAdminPaymentsScreen()
+                                    SuperAdminTab.RECOVERY -> SuperAdminRecoveryScreen()
+                                    SuperAdminTab.POLICY -> SuperAdminPolicyScreen()
                                     SuperAdminTab.MINT -> LicenseMintingKernelScreen()
                                 }
                             }
